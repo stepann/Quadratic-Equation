@@ -26,6 +26,8 @@
     <string name="Solution">Solution</string>
     <string name="Steps">Steps</string>
     <string name="not_poss">not possible</string>
+    <string name="spodek2">2 <small>\u2219</small> </string>
+    <string name="krat_char"> <small><small>\u2219</small></small> </string>
 
 
 </resources>

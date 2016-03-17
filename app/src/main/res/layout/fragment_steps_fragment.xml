@@ -24,7 +24,8 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="73dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:id="@+id/x1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,8 +38,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
         <View
-            android:layout_width="80dp"
-            android:minWidth="80dp"
+            android:layout_width="100dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:id="@+id/cara"
@@ -52,11 +52,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:gravity="center"
             android:textSize="25sp"
             android:id="@+id/vrsek"
             android:layout_above="@+id/cara"
             android:layout_alignLeft="@+id/cara"
-            android:layout_alignStart="@+id/cara" />
+            android:layout_alignStart="@+id/cara"
+            android:layout_alignRight="@+id/cara"
+            android:layout_alignEnd="@+id/cara"
+            android:maxWidth="200dp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,8 +73,9 @@
             android:layout_below="@+id/cara"
             android:layout_alignRight="@+id/cara"
             android:layout_alignEnd="@+id/cara"
-            android:layout_marginRight="14dp"
-            android:layout_marginLeft="14dp" />
+            android:layout_alignLeft="@+id/cara"
+            android:layout_alignStart="@+id/cara"
+            android:maxWidth="200dp" />
 
     </RelativeLayout>
 

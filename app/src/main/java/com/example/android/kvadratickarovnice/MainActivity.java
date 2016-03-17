@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (controlZero() == true) {
+                if (controlZero()) {
 
                     Intent intent = new Intent(MainActivity.this, Solver_activity.class);
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     //if number is x.0 -> parsing to x
-                    NumberFormat numberFormat = new DecimalFormat("#.###");
+                    NumberFormat numberFormat = new DecimalFormat("#.##");
 
                     AbsA = Math.abs(a);
 
