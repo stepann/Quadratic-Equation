@@ -23,7 +23,6 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class MainActivity extends AppCompatActivity {
 
     private EditText hodnotaA, hodnotaB, hodnotaC;
-    private Button solver;
     private String A, B, C, B_2;
     public double a, b, c, d, x1, x2;
 
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         hodnotaA = (EditText) findViewById(R.id.hodnotaA);
         hodnotaB = (EditText) findViewById(R.id.hodnotaB);
         hodnotaC = (EditText) findViewById(R.id.hodnotaC);
-        solver = (Button) findViewById(R.id.button);
+        Button solver = (Button) findViewById(R.id.button);
 
         solver.setOnClickListener(new View.OnClickListener() {
             @Override
