@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quadratic Solver</string>
+    <string name="aboutAuthor">Štěpán Záliš, mail: stepan.zalis@gmail.com</string>
+    <string name="action_about">Author</string>
+    <string name="author">Author</string>
+    <string name="errorA">value of A must not be 0!</string>
+    <string name="errorB">value of B is missing</string>
+    <string name="errorC">value of C is missing!</string>
+    <string name="hodnotaA">value A</string>
+    <string name="hodnotaB">value B</string>
+    <string name="hodnotaC">value C</string>
+    <string name="noRealRoots">no real roots</string>
+    <string name="title_activity_solver_activity">Result</string>
+    <string name="vypocitej">Calculate</string>
+</resources>

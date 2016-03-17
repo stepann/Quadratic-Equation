@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Quadratic Solver</string>
+    <string name="title_activity_solver_activity">Result</string>
+    <string name="action_about">Author</string>
+    <string name="author">Author</string>
+    <string name="aboutAuthor">Štěpán Záliš, mail: stepan.zalis@gmail.com</string>
+    <string name="hodnotaA">value of A</string>
+    <string name="hodnotaB">value of B</string>
+    <string name="hodnotaC">value of C</string>
+    <string name="vypocitej">Calculate</string>
+    <string name="x" translatable="false">x</string>
+    <string name="errorA">value of A must not be 0!</string>
+    <string name="errorB">value of B is missing</string>
+    <string name="errorC">value of C is missing!</string>
+    <string name="noRealRoots">no real roots</string>
+    <string name="vzorec">D = b<small><small><sup>2</sup></small></small> - 4 <small>\u2219</small> a <small>\u2219</small> c </string>
+    <string name="rovnice">ax<small><small><sup>2</sup></small></small> + bx + c = 0</string>
+    <string name="sqrt_D"> \u221aD = ""</string>
+    <string name="x2">x<small><small><sup>2</sup></small></small></string>
+    <string name="lets_find_disk">1. The discriminant</string>
+    <string name="lets_find_roots">2. The roots</string>
+    <string name="vrsek">-b <small>\u2213</small> \u221aD  </string>
+    <string name="spodek">2 <small>\u2219</small> a </string>
+    <string name="krat_4"> 4 <small>\u2219</small> </string>
+    <string name="krat">  <small>\u2219</small> </string>
+    <string name="Solution">Solution</string>
+    <string name="Steps">Steps</string>
+    <string name="not_poss">not possible</string>
+
+
+</resources>

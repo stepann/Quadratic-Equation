@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kvadratická rovnice</string>
+    <string name="action_about">Autor</string>
+    <string name="author">Autor</string>
+    <string name="errorB">doplňte hodnotu B</string>
+    <string name="errorC">doplňte hodnotu C</string>
+    <string name="errorA">Kvadratický člen nemůže být 0!</string>
+    <string name="hodnotaA">hodnota A</string>
+    <string name="hodnotaB">hodnota B</string>
+    <string name="hodnotaC">hodnota C</string>
+    <string name="noRealRoots">žádné reálné kořeny</string>
+    <string name="title_activity_solver_activity">Výsledek</string>
+    <string name="vypocitej">Vypočítej</string>
+    <string name="aboutAuthor">Štěpán Záliš, mail: stepan.zalis@gmail.com</string>
+</resources>
