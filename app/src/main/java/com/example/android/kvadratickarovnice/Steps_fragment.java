@@ -2,17 +2,11 @@ package com.example.android.kvadratickarovnice;
 
 
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
-import android.text.TextDirectionHeuristic;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import java.awt.font.TextAttribute;
 
 
 public class Steps_fragment extends Fragment {
@@ -76,6 +70,6 @@ public class Steps_fragment extends Fragment {
         }
         else vrsek.setText("-" + activity.B + " + " + activity.String_odm_d);
     }
-
+//test of commit
 
 }
