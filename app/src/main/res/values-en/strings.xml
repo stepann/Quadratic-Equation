@@ -17,5 +17,5 @@
     <string name="Steps">Steps</string>
     <string name="lets_find_disk">1. The discriminant</string>
     <string name="lets_find_roots">2. The roots</string>
-    <string name="not_poss">not possible</string>
+    <string name="not_poss"> not possible</string>
 </resources>
