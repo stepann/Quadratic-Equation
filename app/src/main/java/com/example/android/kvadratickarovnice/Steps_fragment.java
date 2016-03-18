@@ -3,7 +3,6 @@ package com.example.android.kvadratickarovnice;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,8 +47,8 @@ public class Steps_fragment extends Fragment {
         x1 = (RelativeLayout) v.findViewById(R.id.x1);
         x2 = (RelativeLayout)v.findViewById(R.id.x2);
 
-        cara = (View) v.findViewById(R.id.cara);
-        cara2 = (View)v.findViewById(R.id.cara2);
+        cara = v.findViewById(R.id.cara);
+        cara2 = v.findViewById(R.id.cara2);
 
         updateText();
         return v;
@@ -70,13 +69,12 @@ public class Steps_fragment extends Fragment {
         vysledek_x1.setText(activity.string_koren1);
         vysledek_x2.setText(activity.string_koren2);
 
-        //Log.e("String", "Diskriminant je : " + activity.D);
         if (activity.D.contains("-")) {
             sqrt_diskriminant.setText(getString(R.string.not_poss));
             //Log.e("String1", "nelze");
 
         } else sqrt_diskriminant.setText(activity.String_odm_d);
-        Log.e("String", "Odmocnina : " + activity.String_odm_d);
+
 
         if (activity.D.contains("-")) {
             //D is negative, show "not possible" message
@@ -105,12 +103,12 @@ public class Steps_fragment extends Fragment {
             if (activity.String_odm_d.length() > 3) {
                 cara.getLayoutParams().width = 500;
                 cara2.getLayoutParams().width = 500;
-                Log.e("v", "String is bigger than 3");
+
             }
             if (activity.String_odm_d.length() > 5) {
                 cara.getLayoutParams().width = 600;
                 cara2.getLayoutParams().width = 600;
-                Log.e("v1", "String is bigger than 5");
+
             }
 
 

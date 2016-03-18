@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,10 +21,9 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
 
+    public double a, b, c, d, x1, x2;
     private EditText hodnotaA, hodnotaB, hodnotaC;
     private String A, B, C, B_2;
-    public double a, b, c, d, x1, x2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
                     if(a < 0) {
                         if(c < 0) {
                             intent.putExtra("disk", " -");
-                            Log.e("..", "a i c je menší než 0, nastavuju -");
+
                         }
                     }
                     if(c < 0 ) {
                         if (a > 0) {
                             intent.putExtra("disk", " +");
-                            Log.e(".", "c je menší než 0");
+
                         }
                     }
                     if(a < 0) {
@@ -94,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
                     if(c == 0) {
                         intent.putExtra("disk", " -");
                     }
-
-                    //Log.e("ah", "a, b ,c: " + a + " " + b + " " + c);
 
                     //formating A to decimal, if the A = x.0 -> parse to x and add ,
                     A = numberFormat.format(a);
@@ -196,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
     //item About
     private void AboutItem() {
-        new AlertDialog.Builder(this).setTitle(R.string.author).setMessage(R.string.aboutAuthor).setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(R.string.author).setMessage(R.string.aboutAuthor).setIcon(R.drawable.icon).setNeutralButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
