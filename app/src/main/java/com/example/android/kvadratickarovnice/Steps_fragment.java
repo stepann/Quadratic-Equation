@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class Steps_fragment extends Fragment {
 
-    TextView b_2, a, c, sign_disk, diskriminant, sqrt_diskriminant, sqrt_text, root_text, vrsek, spodek;
-    RelativeLayout x1;
-    View view;
+    TextView b_2, a, c, sign_disk, diskriminant, sqrt_diskriminant, sqrt_text, root_text, vrsek, vrsek2, spodek, spodek2, vysledek_x1,vysledek_x2;
+    RelativeLayout x1, x2;
+    View cara, cara2;
 
     public Steps_fragment() {
 
@@ -36,10 +36,20 @@ public class Steps_fragment extends Fragment {
         sqrt_diskriminant = (TextView) v.findViewById(R.id.sqrt_disk);
         sqrt_text = (TextView) v.findViewById(R.id.sqrt_disk_text);
         root_text = (TextView) v.findViewById(R.id.root_text);
+        vysledek_x1 = (TextView)v.findViewById(R.id.vysledek_x1);
+        vysledek_x2 = (TextView)v.findViewById(R.id.vysledek_x2);
+
         vrsek = (TextView) v.findViewById(R.id.vrsek);
+        vrsek2 = (TextView)v.findViewById(R.id.vrsek2);
+
         spodek = (TextView) v.findViewById(R.id.spodek);
+        spodek2 = (TextView)v.findViewById(R.id.spodek2);
+
         x1 = (RelativeLayout) v.findViewById(R.id.x1);
-        view = (View) v.findViewById(R.id.cara);
+        x2 = (RelativeLayout)v.findViewById(R.id.x2);
+
+        cara = (View) v.findViewById(R.id.cara);
+        cara2 = (View)v.findViewById(R.id.cara2);
 
         updateText();
         return v;
@@ -57,6 +67,8 @@ public class Steps_fragment extends Fragment {
         sign_disk.setText(activity.disk);
         //Log.e("disk", "disk " + activity.disk);
         diskriminant.setText(activity.D);
+        vysledek_x1.setText(activity.string_koren1);
+        vysledek_x2.setText(activity.string_koren2);
 
         //Log.e("String", "Diskriminant je : " + activity.D);
         if (activity.D.contains("-")) {
@@ -70,26 +82,34 @@ public class Steps_fragment extends Fragment {
             //D is negative, show "not possible" message
             root_text.setVisibility(View.VISIBLE);
             x1.setVisibility(View.GONE);
+            x2.setVisibility(View.GONE);
         } else {
             if (activity.B.contains("-")) {
                 //B_FORM = activity.B.replace("-", "");
                 vrsek.setText(activity.B.replace("-", " ") + " + " + activity.String_odm_d);
+                vrsek2.setText(activity.B.replace("-", " ") + " - " + activity.String_odm_d);
             } else {
                 vrsek.setText("-" + activity.B + " + " + activity.String_odm_d);
+                vrsek2.setText("-" + activity.B + " - " + activity.String_odm_d);
                 spodek.setText(getString(R.string.spodek2) + activity.A);
+                spodek2.setText(getString(R.string.spodek2) + activity.A);
             }
             if (activity.A.contains("-")) {
                 spodek.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
+                spodek2.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
             } else {
                 spodek.setText(getString(R.string.spodek2) + activity.A);
+                spodek2.setText(getString(R.string.spodek2) + activity.A);
             }
 
             if (activity.String_odm_d.length() > 3) {
-                view.getLayoutParams().width = 500;
+                cara.getLayoutParams().width = 500;
+                cara2.getLayoutParams().width = 500;
                 Log.e("v", "String is bigger than 3");
             }
             if (activity.String_odm_d.length() > 5) {
-                view.getLayoutParams().width = 600;
+                cara.getLayoutParams().width = 600;
+                cara2.getLayoutParams().width = 600;
                 Log.e("v1", "String is bigger than 5");
             }
 
