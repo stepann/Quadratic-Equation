@@ -48,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
                     a = Double.parseDouble(A);
                     b = Double.parseDouble(B);
                     c = Double.parseDouble(C);
-                    double b_2 = b*b;
+                    double b_2 = b * b;
 
 
                     //absolute values of b,c
                     double AbsA = a;
                     double AbsB = b;
                     double AbsC = c;
-
 
 
                     //if number is x.0 -> parsing to x
@@ -67,29 +66,29 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("AbsA", absA);
 
                     //send signs od steps disk
-                    if(a < 0) {
-                        if(c < 0) {
+                    if (a < 0) {
+                        if (c < 0) {
                             intent.putExtra("disk", " -");
 
                         }
                     }
-                    if(c < 0 ) {
+                    if (c < 0) {
                         if (a > 0) {
                             intent.putExtra("disk", " +");
 
                         }
                     }
-                    if(a < 0) {
+                    if (a < 0) {
                         if (c > 0) {
                             intent.putExtra("disk", " +");
                         }
                     }
-                    if(a > 0) {
+                    if (a > 0) {
                         if (c > 0) {
                             intent.putExtra("disk", " -");
                         }
                     }
-                    if(c == 0) {
+                    if (c == 0) {
                         intent.putExtra("disk", " -");
                     }
 
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     if (d < 0) {
                         intent.putExtra("val", "negative");
                     }
-                    if(d > 0){
+                    if (d > 0) {
                         double odm_d = Math.sqrt(d);
                         String String_odm_d = numberFormat.format(odm_d);
                         intent.putExtra("odm_d", String_odm_d);
@@ -222,13 +221,14 @@ public class MainActivity extends AppCompatActivity {
         if (C.trim().isEmpty() || C.equals(".") || C.equals("-")) {
             Toast.makeText(MainActivity.this, R.string.errorC, LENGTH_SHORT).show();
             return false;
-        }
-
-        else return true;
+        } else return true;
 
     }
+
     //method for counting discriminant
-    private double diskriminant() { return d = (b * b) - 4 * a * c;  }
+    private double diskriminant() {
+        return d = (b * b) - 4 * a * c;
+    }
 
     private double root_1() {
         return x1 = (-b + Math.sqrt(d)) / (2 * a);
@@ -237,7 +237,6 @@ public class MainActivity extends AppCompatActivity {
     private double root_2() {
         return x2 = (-b - Math.sqrt(d)) / (2 * a);
     }
-
 
 
 }
