@@ -25,7 +25,7 @@
     <string name="krat_4" translatable="false"> 4 <small>\u2219</small> </string>
     <string name="krat" translatable="false">  <small>\u2219</small> </string>
     <string name="Solution">Solution</string>
-    <string name="Steps">Steps</string>
+    <string name="Method">Method</string>
     <string name="not_poss">not possible</string>
     <string name="spodek2" translatable="false">2 <small>\u2219</small> </string>
     <string name="krat_char" translatable="false"> <small><small>\u2219</small></small> </string>

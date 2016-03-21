@@ -1,4 +1,4 @@
-package com.example.android.kvadratickarovnice;
+package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -7,13 +7,10 @@ import android.support.v7.widget.Toolbar;
 
 public class Solver_activity extends MainActivity {
 
+    public String A, B, C, symbolB, symbolC, D, string_koren1, string_koren2, value, B_2, AbsA, disk, String_odm_d;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
-
-    public String A,B,C,symbolB,symbolC,D,string_koren1,string_koren2,value, B_2, AbsA, disk, String_odm_d;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +26,7 @@ public class Solver_activity extends MainActivity {
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         viewPagerAdapter.addFragments(new Solver_fragment(), getString(R.string.Solution));
-        viewPagerAdapter.addFragments(new Steps_fragment(), getString(R.string.Steps));
+        viewPagerAdapter.addFragments(new Steps_fragment(), getString(R.string.Method));
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);

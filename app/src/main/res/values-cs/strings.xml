@@ -14,8 +14,8 @@
     <string name="vypocitej">Vypočítej</string>
     <string name="aboutAuthor">Štěpán Záliš \nmail: stepan.zalis@gmail.com</string>
     <string name="Solution">Řešení</string>
-    <string name="Steps">Postup</string>
+    <string name="Method">Postup</string>
     <string name="lets_find_disk">1. Diskriminant</string>
-    <string name="lets_find_roots">2. Kořeny</string>
+    <string name="lets_find_roots">2. Kořeny rovnice</string>
     <string name="not_poss">nemá řešení</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.android.kvadratickarovnice;
+package com.mycompany.quadraticEquation.solver;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,17 +12,15 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     ArrayList<Fragment> fragments = new ArrayList<>();
     ArrayList<String> tabTitles = new ArrayList<>();
 
+    public ViewPagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
     public void addFragments(Fragment fragments,String titles) {
         this.fragments.add(fragments);
         this.tabTitles.add(titles);
 
     }
-
-
-    public ViewPagerAdapter(FragmentManager fm) {
-        super(fm);
-    }
-
 
     @Override
     public Fragment getItem(int position) {

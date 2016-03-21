@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.kvadratickarovnice">
+    package="com.mycompany.quadraticEquation.solver">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        android:theme="@style/AppTheme"
+        android:versionCode="2"
+        android:versionName="1.0.1">
+        <activity
+            android:name="com.mycompany.quadraticEquation.solver.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,14 +20,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Solver_activity"
+            android:name="com.mycompany.quadraticEquation.solver.Solver_activity"
             android:label="@string/title_activity_solver_activity"
+            android:parentActivityName="com.mycompany.quadraticEquation.solver.MainActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.kvadratickarovnice.MainActivity" />
+                android:value="com.mycompany.quadraticEquation.solver.MainActivity" />
         </activity>
     </application>
 

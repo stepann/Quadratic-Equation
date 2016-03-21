@@ -1,4 +1,4 @@
-package com.example.android.kvadratickarovnice;
+package com.mycompany.quadraticEquation.solver;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
