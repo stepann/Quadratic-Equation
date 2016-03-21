@@ -69,13 +69,11 @@ public class MainActivity extends AppCompatActivity {
                     if (a < 0) {
                         if (c < 0) {
                             intent.putExtra("disk", " -");
-
                         }
                     }
                     if (c < 0) {
                         if (a > 0) {
                             intent.putExtra("disk", " +");
-
                         }
                     }
                     if (a < 0) {
