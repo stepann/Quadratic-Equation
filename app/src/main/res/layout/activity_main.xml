@@ -15,12 +15,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.40"
+        android:layout_weight="0.5"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/text"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -83,18 +84,18 @@
     android:layout_weight="1"
     android:gravity="center_horizontal"
     android:orientation="vertical">
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:minWidth="220sp"
+        android:minWidth="220dp"
         android:onClick="solver"
         android:text="@string/vypocitej"
         android:textColor="@color/primary_text"
         android:textSize="14sp"
-        android:theme="@style/MyButton"
-        >
+        android:theme="@style/MyButton">
     </Button>
 
 </LinearLayout>
