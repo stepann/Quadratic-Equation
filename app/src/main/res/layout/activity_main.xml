@@ -47,6 +47,7 @@
            android:layout_height="wrap_content"
            android:gravity="center_horizontal"
            android:hint="@string/hodnotaA"
+
            android:inputType="number|numberDecimal|numberSigned"
            android:textColor="@color/textColor"
            />
@@ -94,8 +95,8 @@
         android:onClick="solver"
         android:text="@string/vypocitej"
         android:textColor="@color/primary_text"
-        android:textSize="14sp"
-        android:theme="@style/MyButton">
+        android:textSize="15sp"
+        android:theme="@style/ButtonStyle">
     </Button>
 
 </LinearLayout>

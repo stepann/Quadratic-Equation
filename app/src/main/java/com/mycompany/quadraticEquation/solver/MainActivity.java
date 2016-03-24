@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
     //item About
     private void AboutItem() {
-        new AlertDialog.Builder(this).setTitle(R.string.author).setMessage(R.string.aboutAuthor).setIcon(R.drawable.icon).setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(R.string.author).setMessage(R.string.aboutAuthor).setNeutralButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
