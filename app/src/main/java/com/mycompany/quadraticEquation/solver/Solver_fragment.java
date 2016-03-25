@@ -3,7 +3,6 @@ package com.mycompany.quadraticEquation.solver;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,14 +89,8 @@ public class Solver_fragment extends Fragment {
 
         switch (activity.value) {
             case ("negative"):
-                equal1.setText("");
-                equal2.setText("");
-                disk_text1.setText("");
-                disk_text1_1.setText("");
-                disk_text1.setText("D<0");
-                disk_text2.setText("");
-                disk_text2.setText(R.string.noRealRoots);
-                disk_text2_2.setText("");
+                Koren_1.setText(activity.complex_root_1);
+                Koren_2.setText(activity.complex_root_2);
                 break;
 
             case ("positive"):
@@ -105,8 +98,6 @@ public class Solver_fragment extends Fragment {
                 disk_text2_2.setText(Html.fromHtml("<sub>2<sub>"));
                 Koren_1.setText(activity.string_koren1);
                 Koren_2.setText(activity.string_koren2);
-                Log.e("K1", "Kořen 1 je: " + activity.string_koren1);
-                Log.e("K2", "Kořen 2 je: " + activity.string_koren2);
                 break;
 
             case("zero"):
