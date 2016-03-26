@@ -18,5 +18,6 @@
     <string name="lets_find_disk">1. Diskriminant</string>
     <string name="lets_find_roots">2. Kořeny rovnice</string>
     <string name="complex_message">Pokud je diskriminant záporný, rovnice má řešení v komplexních číslech</string>
+    <string name="disk_zero">Pokud je diskriminant rovný nule, rovnice má pouze jeden kořen</string>
 
 </resources>

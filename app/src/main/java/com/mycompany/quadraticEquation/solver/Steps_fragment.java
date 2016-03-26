@@ -65,27 +65,27 @@ public class Steps_fragment extends Fragment {
     private void updateText() {
 
         Solver_activity activity = (Solver_activity) getActivity();
-
+        Log.e("TAG", "updateText: " + activity.value);
+        Log.e("TAG1", "updateText: " + activity.String_odm_d_complex);
+        Log.e("TAG2", "updateText: " + activity.String_odm_d);
 
         b_2.setText(activity.B_2);
         a.setText(activity.AbsA);
         c.setText(activity.C);
         sign_disk.setText(activity.disk);
-        //Log.e("disk", "disk " + activity.disk);
         diskriminant.setText(activity.D);
 
 
-        if (activity.D.contains("-")) {
+        if (activity.value.contains("negative")) {
 
             sqrt_text.setVisibility(View.GONE);
             sqrt_diskriminant.setVisibility(View.GONE); //dismiss D squared
-            message.setVisibility(View.VISIBLE); //message which inform user that D < 0
+            message.setVisibility(View.VISIBLE);
+            message.setText(R.string.complex_message); //message which inform user that D < 0
             vrsek_vzorec.setVisibility(View.GONE); //dismiss formula in real numbers
             vrsek_vzorec_complex.setVisibility(View.VISIBLE); //set formula in complex numbers
 
-
             if (activity.b_this < 0) {
-                Log.e("TAGads", "updateText: " + "B is less than 0");
                 vrsek.setText(activity.B.replace("-", " ") + " + " + "|-" + activity.String_odm_d_complex + "|" + "i");
                 vrsek2.setText(activity.B.replace("-", " ") + " - " + "|-" + activity.String_odm_d_complex + "|" + "i");
             } else {
@@ -95,21 +95,54 @@ public class Steps_fragment extends Fragment {
             if (activity.a_this < 0) {
                 spodek.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
                 spodek2.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
-                spodek.setText(getString(R.string.spodek2) + activity.A);
-                spodek2.setText(getString(R.string.spodek2) + activity.A);
+
             } else {
                 spodek.setText(getString(R.string.spodek2) + activity.A);
                 spodek2.setText(getString(R.string.spodek2) + activity.A);
             }
+
             if (activity.String_odm_d_complex.length() >= 4) {
-                cara.getLayoutParams().width = 600;
-                cara2.getLayoutParams().width = 600;
+                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
+                cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
             }
 
             vysledek_x1.setText(activity.complex_root_1);
             vysledek_x2.setText(activity.complex_root_2);
 
-        } else {
+        }
+
+        //D = 0
+        if (activity.value.contains("zero")) {
+
+            sqrt_text.setVisibility(View.GONE);
+            sqrt_diskriminant.setVisibility(View.GONE); //dismiss D squared
+            message.setVisibility(View.VISIBLE);
+            message.setText(R.string.disk_zero); //message which inform user that D < 0
+            x2.setVisibility(View.GONE);
+
+            if (activity.b_this < 0) {
+                vrsek.setText(activity.B.replace("-", " ") + " + " + activity.String_odm_d);
+            } else vrsek.setText("-" + activity.B + " + " + activity.String_odm_d);
+
+            if (activity.a_this < 0) {
+                spodek.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
+
+            } else {
+                spodek.setText(getString(R.string.spodek2) + activity.A);
+
+            }
+
+            if (activity.String_odm_d.length() >= 4) {
+                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
+
+            }
+
+            vysledek_x1.setText(activity.string_koren1);
+
+            }
+
+        //D == +
+        if (activity.value.contains("positive")) {
             sqrt_diskriminant.setText(activity.String_odm_d);
 
             if (activity.b_this < 0) {
@@ -133,14 +166,11 @@ public class Steps_fragment extends Fragment {
             vysledek_x2.setText(activity.string_koren2);
 
             if (activity.String_odm_d.length() >= 4) {
-                cara.getLayoutParams().width = 600;
-                cara2.getLayoutParams().width = 600;
+                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
+                cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
             }
         }
 
     }
 
 }
-
-
-

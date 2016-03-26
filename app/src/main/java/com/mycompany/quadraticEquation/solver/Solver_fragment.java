@@ -89,6 +89,8 @@ public class Solver_fragment extends Fragment {
 
         switch (activity.value) {
             case ("negative"):
+                disk_text1_1.setText(Html.fromHtml("<sub>1</sub>"));
+                disk_text2_2.setText(Html.fromHtml("<sub>2<sub>"));
                 Koren_1.setText(activity.complex_root_1);
                 Koren_2.setText(activity.complex_root_2);
                 break;

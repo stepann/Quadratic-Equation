@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -22,7 +21,6 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "LOG";
     public double a, b, c, d, x1, x2, odm_d, odm_d_complex;
     private EditText hodnotaA, hodnotaB, hodnotaC;
     private String A, B, C, B_2, c_x1, c_x2, String_odm_d_complex;
@@ -55,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                     intent.putExtra("a", a);
                     intent.putExtra("b", b);
+
 
                     //absolute values of b,c
                     double AbsA = a;
@@ -123,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //diskriminant
                     diskriminant();
+
                     odm_d = Math.sqrt(d);
                     odm_d_complex = Math.sqrt(Math.abs(d));
 
@@ -228,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
 
     //method for counting discriminant
     private double diskriminant() {
+
         return d = (b * b) - 4 * a * c;
     }
 
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
         double cast_2 = Math.sqrt((Math.abs(d)))/(2*a);
         c_x1 = numberFormat.format(cast_1) + " + " + numberFormat.format(Math.abs(cast_2)) + "i";
         c_x2 = numberFormat.format(cast_1) + " - " + numberFormat.format(Math.abs(cast_2)) + "i";
-        Log.e(TAG, "complex_root_first: " + c_x1 );
+
 
     }
 

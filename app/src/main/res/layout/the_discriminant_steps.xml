@@ -151,7 +151,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
-            android:text="@string/complex_message"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:visibility="gone" />

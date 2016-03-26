@@ -18,5 +18,6 @@
     <string name="lets_find_disk">1. The discriminant</string>
     <string name="lets_find_roots">2. The roots</string>
     <string name="complex_message">Since the diskriminant is less than zero, the equation has only complex roots</string>
+    <string name="disk_zero">Since the diskriminant is zero, the equation has only one root</string>
 
 </resources>

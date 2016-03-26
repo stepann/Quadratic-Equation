@@ -31,6 +31,7 @@
     <string name="x1_sub" translatable="false">x<small><sub>1</sub></small> =</string>
     <string name="x2_sub" translatable="false">x<small><sub>2</sub></small> =</string>
     <string name="complex_message">Since the diskriminant is less than zero, the equation has only complex roots</string>
+    <string name="disk_zero">Since the diskriminant is zero, the equation has only one root</string>
     <string name="vrsek_complex" translatable="false">-b <small>\u2213</small> \u221a|D|i</string>
 
 
