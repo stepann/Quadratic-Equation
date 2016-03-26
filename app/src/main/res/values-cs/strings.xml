@@ -17,5 +17,6 @@
     <string name="Method">Postup</string>
     <string name="lets_find_disk">1. Diskriminant</string>
     <string name="lets_find_roots">2. Kořeny rovnice</string>
-    <string name="not_poss">nemá řešení</string>
+    <string name="complex_message">Pokud je diskriminant záporný, rovnice má řešení v komplexních číslech</string>
+
 </resources>

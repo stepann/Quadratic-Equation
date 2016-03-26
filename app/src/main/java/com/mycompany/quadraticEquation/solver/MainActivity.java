@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,9 +22,10 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
 
-    public double a, b, c, d, x1, x2;
+    private static final String TAG = "LOG";
+    public double a, b, c, d, x1, x2, odm_d, odm_d_complex;
     private EditText hodnotaA, hodnotaB, hodnotaC;
-    private String A, B, C, B_2;
+    private String A, B, C, B_2, c_x1, c_x2, String_odm_d_complex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     double b_2 = b * b;
 
 
+                    intent.putExtra("a", a);
+                    intent.putExtra("b", b);
+
                     //absolute values of b,c
                     double AbsA = a;
                     double AbsB = b;
@@ -67,16 +72,16 @@ public class MainActivity extends AppCompatActivity {
 
                     //send signs of method disk
                     if (a < 0 && c < 0) {
-                            intent.putExtra("disk", " -");
-                        }
+                        intent.putExtra("disk", " -");
+                    }
                     if (c < 0 && a > 0) {
-                            intent.putExtra("disk", " +");
+                        intent.putExtra("disk", " +");
                     }
                     if (a < 0 && c > 0) {
-                            intent.putExtra("disk", " +");
-                        }
+                        intent.putExtra("disk", " +");
+                    }
                     if (a > 0 && c > 0) {
-                            intent.putExtra("disk", " -");
+                        intent.putExtra("disk", " -");
                     }
                     if (c == 0) {
                         intent.putExtra("disk", " -");
@@ -118,15 +123,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //diskriminant
                     diskriminant();
+                    odm_d = Math.sqrt(d);
+                    odm_d_complex = Math.sqrt(Math.abs(d));
 
                     String D = numberFormat.format(d);
                     intent.putExtra("diskriminant", " " + D);
 
                     if (d < 0) {
+                        String_odm_d_complex = numberFormat.format(odm_d_complex);
+                        intent.putExtra("String_odm_d_complex", String_odm_d_complex);
+                        complex_roots(); //method for counting roots in complex numbers
                         intent.putExtra("val", "negative");
+                        intent.putExtra("complex_1", c_x1);
+                        intent.putExtra("complex_2",c_x2);
+
+
                     }
                     if (d > 0) {
-                        double odm_d = Math.sqrt(d);
                         String String_odm_d = numberFormat.format(odm_d);
                         intent.putExtra("odm_d", String_odm_d);
 
@@ -141,13 +154,11 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("val", "positive");
                     }
                     if (d == 0) {
-                        double odm_d = Math.sqrt(d);
                         String String_odm_d = numberFormat.format(odm_d);
                         intent.putExtra("odm_d", String_odm_d);
                         root_1(); //method which counts first root
                         String string_x1 = numberFormat.format(x1);
                         intent.putExtra("x1", string_x1);
-
                         intent.putExtra("val", "zero");
                     }
                     //start intent and send data*//*
@@ -181,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
     //item About
     private void AboutItem() {
-        new AlertDialog.Builder(this).setTitle(R.string.author).setMessage(R.string.aboutAuthor).setIcon(R.drawable.icon).setNeutralButton("OK", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(this).setTitle(R.string.author).setMessage(R.string.aboutAuthor).setNeutralButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
@@ -228,5 +239,14 @@ public class MainActivity extends AppCompatActivity {
         return x2 = (-b - Math.sqrt(d)) / (2 * a);
     }
 
+    private void complex_roots() {
+        NumberFormat numberFormat = new DecimalFormat("#.##");
+        double cast_1 = (-b / (2 * a));
+        double cast_2 = Math.sqrt((Math.abs(d)))/(2*a);
+        c_x1 = numberFormat.format(cast_1) + " + " + numberFormat.format(Math.abs(cast_2)) + "i";
+        c_x2 = numberFormat.format(cast_1) + " - " + numberFormat.format(Math.abs(cast_2)) + "i";
+        Log.e(TAG, "complex_root_first: " + c_x1 );
+
+    }
 
 }

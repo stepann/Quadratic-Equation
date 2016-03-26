@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="android:buttonStyle">@style/MyButton</item>
+        <item name="android:button">@color/button</item>
         <item name="android:itemTextAppearance">@style/TextAppearance</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,7 +12,7 @@
         <item name="android:textColorPrimaryInverse">@color/primary_text_material_dark</item>
         <item name="android:textColorSecondary">@color/secondary_text_material_light</item>
         <item name="android:textColorSecondaryInverse">@color/secondary_text_material_dark</item>
-        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+
     </style>
 
     <!-- set black color to overflow menu item -->
@@ -21,8 +21,9 @@
     </style>
 
     <!-- set button style -->
-    <style name="MyButton" parent="Widget.AppCompat.Button.Colored">
-        <item name="android:background">@color/colorPrimary</item>
+   <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/button</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>

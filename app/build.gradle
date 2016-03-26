@@ -7,6 +7,7 @@ android {
     defaultConfig {
         applicationId "com.mycompany.quadraticEquation.solver"
         minSdkVersion 15
+        compileSdkVersion = 23
         targetSdkVersion 23
         versionCode 2
         versionName "1.0.1"

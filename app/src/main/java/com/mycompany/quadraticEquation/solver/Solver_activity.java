@@ -7,7 +7,9 @@ import android.support.v7.widget.Toolbar;
 
 public class Solver_activity extends MainActivity {
 
-    public String A, B, C, symbolB, symbolC, D, string_koren1, string_koren2, value, B_2, AbsA, disk, String_odm_d;
+    public String A, B, C, symbolB, symbolC, D, string_koren1, string_koren2,
+            value, B_2, AbsA, disk, String_odm_d, complex_root_1, complex_root_2, String_odm_d_complex;
+    public Double a_this, b_this;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
@@ -42,6 +44,8 @@ public class Solver_activity extends MainActivity {
 
         Bundle bundle = getIntent().getExtras();
 
+        a_this = bundle.getDouble("a");
+        b_this = bundle.getDouble("b");
         A = bundle.getString("kvadratickarovniceA");
         B = bundle.getString("kvadratickarovniceB");
         C = bundle.getString("kvadratickarovniceC");
@@ -55,6 +59,9 @@ public class Solver_activity extends MainActivity {
         AbsA = bundle.getString("AbsA");
         disk = bundle.getString("disk");
         String_odm_d = bundle.getString("odm_d");
+        complex_root_1 = bundle.getString("complex_1");
+        complex_root_2 = bundle.getString("complex_2");
+        String_odm_d_complex = bundle.getString("String_odm_d_complex");
 
     }
 
