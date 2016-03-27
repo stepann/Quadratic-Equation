@@ -50,10 +50,8 @@ public class MainActivity extends AppCompatActivity {
                     c = Double.parseDouble(C);
                     double b_2 = b * b;
 
-
                     intent.putExtra("a", a);
                     intent.putExtra("b", b);
-
 
                     //absolute values of b,c
                     double AbsA = a;
@@ -135,8 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         complex_roots(); //method for counting roots in complex numbers
                         intent.putExtra("val", "negative");
                         intent.putExtra("complex_1", c_x1);
-                        intent.putExtra("complex_2",c_x2);
-
+                        intent.putExtra("complex_2", c_x2);
 
                     }
                     if (d > 0) {
@@ -163,11 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //start intent and send data*//*
                     startActivity(intent);
-
-
                 }
-
-
             }
 
         });
@@ -200,14 +193,12 @@ public class MainActivity extends AppCompatActivity {
         }).show();
     }
 
-
     //method for control zeros from inputs, if A,B or C is zero, return false and Toast messege
     private boolean controlZero() {
 
         A = hodnotaA.getText().toString();
         B = hodnotaB.getText().toString();
         C = hodnotaC.getText().toString();
-
 
         //A must not be zero
         if (A.trim().isEmpty() || A.equals("0") || A.equals(".") || A.equals("-")) {
@@ -227,10 +218,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method for counting discriminant
-    private double diskriminant() {
-
-        return d = (b * b) - 4 * a * c;
-    }
+    private double diskriminant() {  return d = (b * b) - 4 * a * c; }
 
     private double root_1() {
         return x1 = (-b + Math.sqrt(d)) / (2 * a);
@@ -243,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
     private void complex_roots() {
         NumberFormat numberFormat = new DecimalFormat("#.##");
         double cast_1 = (-b / (2 * a));
-        double cast_2 = Math.sqrt((Math.abs(d)))/(2*a);
+        double cast_2 = Math.sqrt((Math.abs(d))) / (2 * a);
         c_x1 = numberFormat.format(cast_1) + " + " + numberFormat.format(Math.abs(cast_2)) + "i";
         c_x2 = numberFormat.format(cast_1) + " - " + numberFormat.format(Math.abs(cast_2)) + "i";
 

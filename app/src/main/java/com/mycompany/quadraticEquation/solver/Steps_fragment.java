@@ -3,7 +3,6 @@ package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +56,7 @@ public class Steps_fragment extends Fragment {
         cara2 = v.findViewById(R.id.cara2);
 
         updateText();
+
         return v;
 
 
@@ -65,9 +65,6 @@ public class Steps_fragment extends Fragment {
     private void updateText() {
 
         Solver_activity activity = (Solver_activity) getActivity();
-        Log.e("TAG", "updateText: " + activity.value);
-        Log.e("TAG1", "updateText: " + activity.String_odm_d_complex);
-        Log.e("TAG2", "updateText: " + activity.String_odm_d);
 
         b_2.setText(activity.B_2);
         a.setText(activity.AbsA);
@@ -101,11 +98,19 @@ public class Steps_fragment extends Fragment {
                 spodek2.setText(getString(R.string.spodek2) + activity.A);
             }
 
-            if (activity.String_odm_d_complex.length() >= 4) {
+            if (activity.String_odm_d_complex.length() >= 3 && activity.String_odm_d_complex.length() <= 4) {
+                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
+                cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
+            } else if (activity.String_odm_d_complex.length() >= 5 && activity.String_odm_d_complex.length() < 5.5) {
                 cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
                 cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
+
+            } else if (activity.String_odm_d_complex.length() >= 6) {
+                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_bigger);
+                cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_bigger);
             }
 
+            //print results
             vysledek_x1.setText(activity.complex_root_1);
             vysledek_x2.setText(activity.complex_root_2);
 
@@ -131,15 +136,10 @@ public class Steps_fragment extends Fragment {
                 spodek.setText(getString(R.string.spodek2) + activity.A);
 
             }
-
-            if (activity.String_odm_d.length() >= 4) {
-                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
-
-            }
-
+            //print result
             vysledek_x1.setText(activity.string_koren1);
 
-            }
+        }
 
         //D == +
         if (activity.value.contains("positive")) {
@@ -162,15 +162,20 @@ public class Steps_fragment extends Fragment {
                 spodek2.setText(getString(R.string.spodek2) + activity.A);
             }
 
-            vysledek_x1.setText(activity.string_koren1);
-            vysledek_x2.setText(activity.string_koren2);
+            if (activity.String_odm_d.length() >= 3 && activity.String_odm_d.length() <= 5) {
+                cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
+                cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
 
-            if (activity.String_odm_d.length() >= 4) {
+            } else if (activity.String_odm_d.length() >= 6) {
                 cara.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
                 cara2.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
             }
+            //print results
+            vysledek_x1.setText(activity.string_koren1);
+            vysledek_x2.setText(activity.string_koren2);
         }
 
     }
 
 }
+
