@@ -70,7 +70,7 @@ public class Steps_fragment extends Fragment {
         tv_b_squred.setText(activity.B_SQUARED);
         tv_a.setText(activity.AbsA);
         tv_c.setText(activity.String_C);
-        tv_discriminantSign.setText(activity.signInDiscriminantFormula);
+        if(activity.signInDiscriminantFormula != null) tv_discriminantSign.setText(activity.signInDiscriminantFormula);
         tv_diskriminant.setText(activity.String_discriminant);
 
 

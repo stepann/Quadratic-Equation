@@ -50,21 +50,15 @@ public class MainActivity extends AppCompatActivity {
                     double_a = Double.parseDouble(String_A);
                     double_b = Double.parseDouble(String_B);
                     double_c = Double.parseDouble(String_C);
-                    double b_squared = double_b * double_b;
 
                     intent.putExtra("double_a", double_a);
                     intent.putExtra("double_b", double_b);
 
-
-                    B_SQUARED = numberFormat.format(b_squared);
+                    B_SQUARED = numberFormat.format(double_b * double_b);
                     intent.putExtra("b_squred", B_SQUARED);
 
-                    if (double_a < 0 && double_c < 0) intent.putExtra("signInDiscriminantFormula", " -");
                     if (double_c < 0 && double_a > 0) intent.putExtra("signInDiscriminantFormula", " +");
                     if (double_a < 0 && double_c > 0) intent.putExtra("signInDiscriminantFormula", " +");
-                    if (double_a > 0 && double_c > 0) intent.putExtra("signInDiscriminantFormula", " -");
-                    if (double_c == 0) intent.putExtra("signInDiscriminantFormula", " -");
-
 
                     double_AbsoluteValueA = Math.abs(double_a);
                     String String_AbsoluteValueA = numberFormat.format(double_AbsoluteValueA);
@@ -75,27 +69,23 @@ public class MainActivity extends AppCompatActivity {
 
                     if (double_b < 0) {
                         //make absolute value and sent sign
-                        double_AbsoluteValueB = Math.abs(double_b);
-                        String_B = numberFormat.format(double_AbsoluteValueB);
+                        String_B = numberFormat.format(Math.abs(double_b));
                         intent.putExtra("kvadratickarovniceB", String_B);
                         intent.putExtra("symbolB", " - ");
                     } else {
-                        double_AbsoluteValueB = Math.abs(double_b);
-                        String_B = numberFormat.format(double_AbsoluteValueB);
+                        String_B = numberFormat.format(Math.abs(double_b));
                         intent.putExtra("kvadratickarovniceB", String_B);
                         intent.putExtra("symbolB", " + ");
                     }
 
                     if (double_c < 0) {
                         //make absolute value and send sign
-                        double_AbsoluteValueC = Math.abs(double_c);
-                        String_C = numberFormat.format(double_AbsoluteValueC);
+                        String_C = numberFormat.format(Math.abs(double_c));
                         intent.putExtra("kvadratickarovniceC", String_C);
                         intent.putExtra("symbolC", "- ");
 
                     } else {
-                        double_AbsoluteValueC = Math.abs(double_c);
-                        String_C = numberFormat.format(double_AbsoluteValueC);
+                        String_C = numberFormat.format(Math.abs(double_c));
                         intent.putExtra("kvadratickarovniceC", String_C);
                         intent.putExtra("symbolC", "+ ");
                     }
@@ -148,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
     //create overflow menu
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -219,7 +208,4 @@ public class MainActivity extends AppCompatActivity {
         COMPLEX_ROOT_FIRST = numberFormat.format(numerator) + " + " + numberFormat.format(Math.abs(denominator)) + "i";
         COMPLEX_ROOT_SECOND = numberFormat.format(numerator) + " - " + numberFormat.format(Math.abs(denominator)) + "i";
     }
-
-
-
 }
