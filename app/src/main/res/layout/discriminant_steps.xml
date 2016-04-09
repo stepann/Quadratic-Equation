@@ -49,14 +49,14 @@
         </TextView>
 
         <TextView
-            android:id="@+id/b_2"
+            android:id="@+id/tv_DicriminantSteps_B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/sign_disk"
+            android:id="@+id/tv_DiscriminantSteps_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" -"
@@ -71,7 +71,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/a"
+            android:id="@+id/tv_DiscriminantSteps_valueA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
@@ -87,7 +87,7 @@
 
 
         <TextView
-            android:id="@+id/c"
+            android:id="@+id/tv_DiscriminantSteps_valueC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
@@ -108,7 +108,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/diskriminant"
+            android:id="@+id/tv_DiscriminantSteps_diskriminant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/sqrt_disk_text"
+            android:id="@+id/tv_DiscriminantSteps_discriminant_sqrt_char"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sqrt_D"
@@ -131,7 +131,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/sqrt_disk"
+            android:id="@+id/tv_DiscriminantSteps_discriminant_sqrt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" "
@@ -147,7 +147,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/complex_message"
+            android:id="@+id/tv_DiscriminantSteps_INVISIBLE_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"

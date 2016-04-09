@@ -11,13 +11,11 @@ import android.widget.TextView;
 
 public class Solver_fragment extends Fragment {
 
-    public TextView AtextView, BtextView, CtextView, SymbolTextViewB;
-    public TextView SymbolTextViewC, DiskTextView;
-    public TextView Koren_1, Koren_2;
-    public TextView disk_text1, disk_text1_1;
-    public TextView disk_text2, disk_text2_2;
-    public TextView BX;
-    public TextView equal1, equal2;
+    public TextView tv_A, tv_B, tv_C, tv_SymbolB, tv_symbolC, tv_discriminant,
+                    tv_root_first, tv_root_second, tv_x_first, tv_x_first_sub;
+    public TextView tv_x_second, tv_x_second_sub;
+    public TextView tv_Bx;
+    public TextView tv_equal_first, tv_equal_second;
 
     public Solver_fragment() {
 
@@ -32,83 +30,91 @@ public class Solver_fragment extends Fragment {
 
 
         //define IDs and
-        AtextView = (TextView)v.findViewById(R.id.Ax);
-        BtextView = (TextView)v.findViewById(R.id.Bx);
-        CtextView = (TextView)v.findViewById(R.id.Cx);
-        SymbolTextViewB = (TextView)v.findViewById(R.id.symbolB);
-        SymbolTextViewC = (TextView)v.findViewById(R.id.symbolC);
-        DiskTextView = (TextView)v.findViewById(R.id.diskriminant_text);
-        Koren_1 = (TextView)v.findViewById(R.id.koren_1);
-        BX = (TextView)v.findViewById(R.id.Bx1);
-        Koren_2 = (TextView)v.findViewById(R.id.koren_2);
-        disk_text1 = (TextView)v.findViewById(R.id.text1);
-        disk_text1_1 = (TextView)v.findViewById(R.id.text1_1);
-        disk_text2 = (TextView)v.findViewById(R.id.text2);
-        disk_text2_2 = (TextView)v.findViewById(R.id.text2_2);
-        equal1 = (TextView)v.findViewById(R.id.equal1);
-        equal2 = (TextView)v.findViewById(R.id.equal2);
+        tv_A = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_A);
+        tv_B = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_B);
+        tv_C = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_Cx);
+        tv_SymbolB = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_symbolB);
+        tv_symbolC = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_symbolC);
+        tv_discriminant = (TextView)v.findViewById(R.id.tv_SolverFragment_discriminantValue);
+        tv_root_first = (TextView)v.findViewById(R.id.tv_SolverFragment_root_first);
+        tv_Bx = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_Bx);
+        tv_root_second = (TextView)v.findViewById(R.id.tv_SolverFragment_root_second);
 
-        updateTextView();
+        tv_x_first = (TextView)v.findViewById(R.id.tv_SolverFragment_x_first);
+        tv_x_first_sub = (TextView)v.findViewById(R.id.tv_SolverFragment_x_sub_first);
+        tv_equal_first = (TextView)v.findViewById(R.id.tv_SolverFragment_equal_first);
+
+        tv_x_second = (TextView)v.findViewById(R.id.tv_SolverFragment_x_second);
+        tv_x_second_sub = (TextView)v.findViewById(R.id.tv_SolverFragment_x_sub_second);
+        tv_equal_second = (TextView)v.findViewById(R.id.tv_SolverFragment_equal_second);
+
+        updateTextViews();
+        dicriminantTextView();
 
     return v;
     }
 
-    private void updateTextView() {
-        Solver_activity activity = (Solver_activity)getActivity();
-        switch (activity.A) {
+    private void updateTextViews() {
+        SolverActivity activity = (SolverActivity)getActivity();
+        switch (activity.String_A) {
             case ("1"):
-                AtextView.setVisibility(View.GONE);
+                tv_A.setVisibility(View.GONE);
                 break;
             default:
-                AtextView.setText(activity.A);
+                tv_A.setText(activity.String_A);
         }
-        switch (activity.B) {
+        switch (activity.String_B) {
             case ("1"):
-                BtextView.setVisibility(View.GONE);
+                tv_B.setVisibility(View.GONE);
                 break;
             case ("0"):
-                BtextView.setVisibility(View.GONE);
-                BX.setText(" ");
-                SymbolTextViewB.setVisibility(View.GONE);
+                tv_B.setVisibility(View.GONE);
+                tv_Bx.setText(" ");
+                tv_SymbolB.setVisibility(View.GONE);
             default:
-                BtextView.setText(activity.B);
+                tv_B.setText(activity.String_B);
         }
-        switch (activity.C) {
+        switch (activity.String_C) {
             case ("0"):
-                SymbolTextViewC.setVisibility(View.GONE);
-                CtextView.setVisibility(View.GONE);
+                tv_symbolC.setVisibility(View.GONE);
+                tv_C.setVisibility(View.GONE);
                 break;
             default:
-                CtextView.setText(activity.C + " ");
+                tv_C.setText(activity.String_C + " ");
         }
 
 
-        SymbolTextViewB.setText(activity.symbolB);
-        SymbolTextViewC.setText(activity.symbolC);
-        DiskTextView.setText(activity.D);
+        tv_SymbolB.setText(activity.symbolB);
+        tv_symbolC.setText(activity.symbolC);
+        tv_discriminant.setText(activity.String_discriminant);
+
+    }
+
+    private void dicriminantTextView() {
+        SolverActivity activity = (SolverActivity)getActivity();
 
         switch (activity.value) {
             case ("negative"):
-                disk_text1_1.setText(Html.fromHtml("<sub>1</sub>"));
-                disk_text2_2.setText(Html.fromHtml("<sub>2<sub>"));
-                Koren_1.setText(activity.complex_root_1);
-                Koren_2.setText(activity.complex_root_2);
+                tv_x_first_sub.setText(Html.fromHtml("<sub>1</sub>"));
+                tv_x_second_sub.setText(Html.fromHtml("<sub>2<sub>"));
+                tv_root_first.setText(activity.COMPLEX_ROOT_FIRST);
+                tv_root_second.setText(activity.COMPLEX_ROOT_SECOND);
                 break;
 
             case ("positive"):
-                disk_text1_1.setText(Html.fromHtml("<sub>1</sub>"));
-                disk_text2_2.setText(Html.fromHtml("<sub>2<sub>"));
-                Koren_1.setText(activity.string_koren1);
-                Koren_2.setText(activity.string_koren2);
+                tv_x_first_sub.setText(Html.fromHtml("<sub>1</sub>"));
+                tv_x_second_sub.setText(Html.fromHtml("<sub>2<sub>"));
+                tv_root_first.setText(activity.String_root_first);
+                tv_root_second.setText(activity.String_root_second);
                 break;
 
             case("zero"):
-                disk_text2.setText("");
-                disk_text2_2.setText("");
-                equal2.setText("");
-                Koren_2.setText("");
-                disk_text1_1.setText(Html.fromHtml("<sub>1</sub>"));
-                Koren_1.setText(activity.string_koren1);
+                tv_x_second.setText("");
+                tv_x_second_sub.setText("");
+                tv_equal_second.setText("");
+                tv_root_second.setText("");
+                tv_x_first_sub.setText(Html.fromHtml("<sub>1</sub>"));
+                tv_root_first.setText(activity.String_root_first);
 
         }
     }

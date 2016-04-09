@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Ax"
+            android:id="@+id/tv_EquationSolverFragment_A"
             android:textSize="34sp"
             android:textColor="@color/textColor"/>
 
@@ -29,7 +29,7 @@
 
 
         <TextView
-            android:id="@+id/symbolB"
+            android:id="@+id/tv_EquationSolverFragment_symbolB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="34sp"
@@ -38,7 +38,7 @@
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/Bx"
+            android:id="@+id/tv_EquationSolverFragment_B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="34sp"
@@ -46,7 +46,7 @@
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/Bx1"
+            android:id="@+id/tv_EquationSolverFragment_Bx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="34sp"
@@ -55,7 +55,7 @@
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/symbolC"
+            android:id="@+id/tv_EquationSolverFragment_symbolC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="34sp"
@@ -64,7 +64,7 @@
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/Cx"
+            android:id="@+id/tv_EquationSolverFragment_Cx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="34sp"

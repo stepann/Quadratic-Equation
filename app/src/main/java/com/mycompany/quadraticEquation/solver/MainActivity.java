@@ -21,9 +21,10 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends AppCompatActivity {
 
-    public double a, b, c, d, x1, x2, odm_d, odm_d_complex;
-    private EditText hodnotaA, hodnotaB, hodnotaC;
-    private String A, B, C, B_2, c_x1, c_x2, String_odm_d_complex;
+    public double double_a, double_b, double_c, double_discriminant, double_root_first, double_root_second,
+            double_rooted_discriminant, double_rooted_discriminant_complex, double_AbsoluteValueA, double_AbsoluteValueB, double_AbsoluteValueC;
+    private EditText edt_valueA, edt_valueB, edt_valueC;
+    private String String_A, String_B, String_C, B_SQUARED, COMPLEX_ROOT_FIRST, COMPLEX_ROOT_SECOND, COMPLEX_DISCRIMINANT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,131 +32,112 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //variables editText and Button
-        hodnotaA = (EditText) findViewById(R.id.hodnotaA);
-        hodnotaB = (EditText) findViewById(R.id.hodnotaB);
-        hodnotaC = (EditText) findViewById(R.id.hodnotaC);
-        Button solver = (Button) findViewById(R.id.button);
+        edt_valueA = (EditText) findViewById(R.id.edt_MainActivity_valueA);
+        edt_valueB = (EditText) findViewById(R.id.edt_MainActivity_valueB);
+        edt_valueC = (EditText) findViewById(R.id.edt_MainActivity_valueC);
+        Button btn_solveEquation = (Button) findViewById(R.id.btn_MainActivity_solveEquation);
 
-        solver.setOnClickListener(new View.OnClickListener() {
+        btn_solveEquation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (controlZero()) {
+                if (checkInputValues()) {
 
-                    Intent intent = new Intent(MainActivity.this, Solver_activity.class);
-
-                    //parse String to Double
-                    a = Double.parseDouble(A);
-                    b = Double.parseDouble(B);
-                    c = Double.parseDouble(C);
-                    double b_2 = b * b;
-
-                    intent.putExtra("a", a);
-                    intent.putExtra("b", b);
-
-                    //absolute values of b,c
-                    double AbsA = a;
-                    double AbsB = b;
-                    double AbsC = c;
-
-
-                    //if number is x.0 -> parsing to x
+                    Intent intent = new Intent(MainActivity.this, SolverActivity.class);
                     NumberFormat numberFormat = new DecimalFormat("#.##");
 
-                    AbsA = Math.abs(a);
+                    //parse String to Double
+                    double_a = Double.parseDouble(String_A);
+                    double_b = Double.parseDouble(String_B);
+                    double_c = Double.parseDouble(String_C);
+                    double b_squared = double_b * double_b;
 
-                    String absA = numberFormat.format(AbsA);
-                    intent.putExtra("AbsA", absA);
+                    intent.putExtra("double_a", double_a);
+                    intent.putExtra("double_b", double_b);
 
-                    //send signs of method disk
-                    if (a < 0 && c < 0) {
-                        intent.putExtra("disk", " -");
-                    }
-                    if (c < 0 && a > 0) {
-                        intent.putExtra("disk", " +");
-                    }
-                    if (a < 0 && c > 0) {
-                        intent.putExtra("disk", " +");
-                    }
-                    if (a > 0 && c > 0) {
-                        intent.putExtra("disk", " -");
-                    }
-                    if (c == 0) {
-                        intent.putExtra("disk", " -");
-                    }
 
-                    //formating A to decimal, if the A = x.0 -> parse to x and add ,
-                    A = numberFormat.format(a);
-                    intent.putExtra("kvadratickarovniceA", A);
+                    B_SQUARED = numberFormat.format(b_squared);
+                    intent.putExtra("b_squred", B_SQUARED);
 
-                    B_2 = numberFormat.format(b_2);
-                    intent.putExtra("b_2", B_2);
+                    if (double_a < 0 && double_c < 0) intent.putExtra("signInDiscriminantFormula", " -");
+                    if (double_c < 0 && double_a > 0) intent.putExtra("signInDiscriminantFormula", " +");
+                    if (double_a < 0 && double_c > 0) intent.putExtra("signInDiscriminantFormula", " +");
+                    if (double_a > 0 && double_c > 0) intent.putExtra("signInDiscriminantFormula", " -");
+                    if (double_c == 0) intent.putExtra("signInDiscriminantFormula", " -");
 
-                    //finding out if B is negative or positive
 
-                    if (b < 0) {
-                        //make absolute value and send sign
-                        AbsB = Math.abs(b);
-                        B = numberFormat.format(AbsB);
-                        intent.putExtra("kvadratickarovniceB", B);
+                    double_AbsoluteValueA = Math.abs(double_a);
+                    String String_AbsoluteValueA = numberFormat.format(double_AbsoluteValueA);
+                    intent.putExtra("AbsA", String_AbsoluteValueA);
+                    //formating String_A to decimal
+                    String_A = numberFormat.format(double_a);
+                    intent.putExtra("kvadratickarovniceA", String_A);
+
+                    if (double_b < 0) {
+                        //make absolute value and sent sign
+                        double_AbsoluteValueB = Math.abs(double_b);
+                        String_B = numberFormat.format(double_AbsoluteValueB);
+                        intent.putExtra("kvadratickarovniceB", String_B);
                         intent.putExtra("symbolB", " - ");
                     } else {
-                        B = numberFormat.format(AbsB);
-                        intent.putExtra("kvadratickarovniceB", B);
+                        double_AbsoluteValueB = Math.abs(double_b);
+                        String_B = numberFormat.format(double_AbsoluteValueB);
+                        intent.putExtra("kvadratickarovniceB", String_B);
                         intent.putExtra("symbolB", " + ");
                     }
 
-                    //finding out if C is negative or positive
-                    if (c < 0) {
+                    if (double_c < 0) {
                         //make absolute value and send sign
-                        AbsC = Math.abs(c);
-                        C = numberFormat.format(AbsC);
-                        intent.putExtra("kvadratickarovniceC", C);
+                        double_AbsoluteValueC = Math.abs(double_c);
+                        String_C = numberFormat.format(double_AbsoluteValueC);
+                        intent.putExtra("kvadratickarovniceC", String_C);
                         intent.putExtra("symbolC", "- ");
 
                     } else {
-                        C = numberFormat.format(AbsC);
-                        intent.putExtra("kvadratickarovniceC", C);
+                        double_AbsoluteValueC = Math.abs(double_c);
+                        String_C = numberFormat.format(double_AbsoluteValueC);
+                        intent.putExtra("kvadratickarovniceC", String_C);
                         intent.putExtra("symbolC", "+ ");
                     }
+
                     //diskriminant
-                    diskriminant();
+                    discriminant();
 
-                    odm_d = Math.sqrt(d);
-                    odm_d_complex = Math.sqrt(Math.abs(d));
+                    double_rooted_discriminant = Math.sqrt(double_discriminant);
+                    double_rooted_discriminant_complex = Math.sqrt(Math.abs(double_discriminant));
 
-                    String D = numberFormat.format(d);
-                    intent.putExtra("diskriminant", " " + D);
+                    String String_Discriminant = numberFormat.format(double_discriminant);
+                    intent.putExtra("diskriminant", " " + String_Discriminant);
 
-                    if (d < 0) {
-                        String_odm_d_complex = numberFormat.format(odm_d_complex);
-                        intent.putExtra("String_odm_d_complex", String_odm_d_complex);
-                        complex_roots(); //method for counting roots in complex numbers
+                    if (double_discriminant < 0) {
+                        COMPLEX_DISCRIMINANT = numberFormat.format(double_rooted_discriminant_complex);
+                        intent.putExtra("COMPLEX_DISCRIMINANT", COMPLEX_DISCRIMINANT);
+                        count_complex_roots(); //method for counting roots in complex numbers
                         intent.putExtra("val", "negative");
-                        intent.putExtra("complex_1", c_x1);
-                        intent.putExtra("complex_2", c_x2);
+                        intent.putExtra("complex_1", COMPLEX_ROOT_FIRST);
+                        intent.putExtra("complex_2", COMPLEX_ROOT_SECOND);
 
                     }
-                    if (d > 0) {
-                        String String_odm_d = numberFormat.format(odm_d);
-                        intent.putExtra("odm_d", String_odm_d);
+                    if (double_discriminant > 0) {
+                        String String_rooted_dicriminant = numberFormat.format(double_rooted_discriminant);
+                        intent.putExtra("double_rooted_discriminant", String_rooted_dicriminant);
 
                         //kořen první
-                        root_1(); //method which counts first root
-                        String string_x1 = numberFormat.format(x1);
-                        intent.putExtra("x1", string_x1);
-                        root_2(); //method which counts second root
-                        String string_x2 = numberFormat.format(x2);
-                        intent.putExtra("x2", string_x2);
-
+                        first_root(); //method which counts first root
+                        String string_x1 = numberFormat.format(double_root_first);
+                        intent.putExtra("double_root_first", string_x1);
+                        second_root(); //method which counts second root
+                        String string_x2 = numberFormat.format(double_root_second);
+                        intent.putExtra("double_root_second", string_x2);
                         intent.putExtra("val", "positive");
                     }
-                    if (d == 0) {
-                        String String_odm_d = numberFormat.format(odm_d);
-                        intent.putExtra("odm_d", String_odm_d);
-                        root_1(); //method which counts first root
-                        String string_x1 = numberFormat.format(x1);
-                        intent.putExtra("x1", string_x1);
+
+                    if (double_discriminant == 0) {
+                        String String_rooted_dicriminant = numberFormat.format(double_rooted_discriminant);
+                        intent.putExtra("double_rooted_discriminant", String_rooted_dicriminant);
+                        first_root(); //method which counts first root
+                        String string_x1 = numberFormat.format(double_root_first);
+                        intent.putExtra("double_root_first", string_x1);
                         intent.putExtra("val", "zero");
                     }
                     //start intent and send data*//*
@@ -164,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
     }
 
 
@@ -193,24 +176,23 @@ public class MainActivity extends AppCompatActivity {
         }).show();
     }
 
-    //method for control zeros from inputs, if A,B or C is zero, return false and Toast messege
-    private boolean controlZero() {
+    private boolean checkInputValues() {
 
-        A = hodnotaA.getText().toString();
-        B = hodnotaB.getText().toString();
-        C = hodnotaC.getText().toString();
+        String_A = edt_valueA.getText().toString();
+        String_B = edt_valueB.getText().toString();
+        String_C = edt_valueC.getText().toString();
 
-        //A must not be zero
-        if (A.trim().isEmpty() || A.equals("0") || A.equals(".") || A.equals("-")) {
+        //String_A must not be zero
+        if (String_A.trim().isEmpty() || String_A.equals("0") || String_A.equals(".") || String_A.equals("-")) {
             Toast.makeText(MainActivity.this, R.string.errorA, LENGTH_SHORT).show();
             return false;
         }
 
-        if (B.trim().isEmpty() || B.equals(".") || B.equals("-")) {
+        if (String_B.trim().isEmpty() || String_B.equals(".") || String_B.equals("-")) {
             Toast.makeText(MainActivity.this, R.string.errorB, LENGTH_SHORT).show();
             return false;
         }
-        if (C.trim().isEmpty() || C.equals(".") || C.equals("-")) {
+        if (String_C.trim().isEmpty() || String_C.equals(".") || String_C.equals("-")) {
             Toast.makeText(MainActivity.this, R.string.errorC, LENGTH_SHORT).show();
             return false;
         } else return true;
@@ -218,24 +200,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method for counting discriminant
-    private double diskriminant() {  return d = (b * b) - 4 * a * c; }
-
-    private double root_1() {
-        return x1 = (-b + Math.sqrt(d)) / (2 * a);
+    private double discriminant() {
+        return double_discriminant = (double_b * double_b) - 4 * double_a * double_c;
     }
 
-    private double root_2() {
-        return x2 = (-b - Math.sqrt(d)) / (2 * a);
+    private double first_root() {
+        return double_root_first = (-double_b + Math.sqrt(double_discriminant)) / (2 * double_a);
     }
 
-    private void complex_roots() {
+    private double second_root() {
+        return double_root_second = (-double_b - Math.sqrt(double_discriminant)) / (2 * double_a);
+    }
+
+    private void count_complex_roots() {
         NumberFormat numberFormat = new DecimalFormat("#.##");
-        double cast_1 = (-b / (2 * a));
-        double cast_2 = Math.sqrt((Math.abs(d))) / (2 * a);
-        c_x1 = numberFormat.format(cast_1) + " + " + numberFormat.format(Math.abs(cast_2)) + "i";
-        c_x2 = numberFormat.format(cast_1) + " - " + numberFormat.format(Math.abs(cast_2)) + "i";
-
-
+        double numerator = (-double_b / (2 * double_a));
+        double denominator = Math.sqrt((Math.abs(double_discriminant))) / (2 * double_a);
+        COMPLEX_ROOT_FIRST = numberFormat.format(numerator) + " + " + numberFormat.format(Math.abs(denominator)) + "i";
+        COMPLEX_ROOT_SECOND = numberFormat.format(numerator) + " - " + numberFormat.format(Math.abs(denominator)) + "i";
     }
+
+
 
 }

@@ -20,7 +20,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/txt_MainActivity_equation"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
         android:paddingTop="30dp">
 
        <EditText
-           android:id="@+id/hodnotaA"
+           android:id="@+id/edt_MainActivity_valueA"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:gravity="center_horizontal"
@@ -52,7 +52,7 @@
            android:textColor="@color/textColor"
            android:textSize="20sp" />
        <EditText
-           android:id="@+id/hodnotaB"
+           android:id="@+id/edt_MainActivity_valueB"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="10dp"
@@ -64,7 +64,7 @@
            android:typeface="normal"
            android:textSize="20sp" />
        <EditText
-           android:id="@+id/hodnotaC"
+           android:id="@+id/edt_MainActivity_valueC"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="10dp"
@@ -87,12 +87,11 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_MainActivity_solveEquation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:minWidth="220dp"
-        android:onClick="solver"
         android:text="@string/vypocitej"
         android:textColor="@color/primary_text"
         android:textSize="15sp"

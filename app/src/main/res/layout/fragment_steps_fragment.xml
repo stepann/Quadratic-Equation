@@ -15,22 +15,22 @@
         android:orientation="vertical">
 
 
-        <include layout="@layout/the_discriminant_steps"
+        <include layout="@layout/discriminant_steps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </include>
 
-        <include layout="@layout/the_roots_steps"
+        <include layout="@layout/root_steps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </include>
 
-        <include layout="@layout/x1"
+        <include layout="@layout/result_first_steps_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </include>
 
-        <include layout="@layout/x2"
+        <include layout="@layout/result_second_steps_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </include>

@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mycompany.quadraticEquation.solver.Solver_activity"
+            android:name=".SolverActivity"
             android:label="@string/title_activity_solver_activity"
             android:parentActivityName="com.mycompany.quadraticEquation.solver.MainActivity"
             android:screenOrientation="portrait"
