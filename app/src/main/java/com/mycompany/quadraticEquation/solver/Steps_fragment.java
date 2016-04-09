@@ -142,7 +142,7 @@ public class Steps_fragment extends Fragment {
 
         }
 
-        //Strin_discriminant == +
+        //String_discriminant == +
         if (activity.value.contains("positive")) {
             tv_discriminant_sqrt.setText(activity.String_rooted_discriminant);
 
