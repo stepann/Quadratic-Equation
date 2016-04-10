@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lets_find_disk"
+            android:text="@string/first_title"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
-            android:text="@string/vzorec"
+            android:text="@string/formula"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -66,7 +66,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/krat_4"
+            android:text="@string/times_four"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/krat"
+            android:text="@string/times"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 

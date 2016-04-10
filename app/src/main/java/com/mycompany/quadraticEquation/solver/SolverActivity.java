@@ -21,8 +21,10 @@ public class SolverActivity extends MainActivity {
         setContentView(R.layout.activity_solver_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -53,7 +55,7 @@ public class SolverActivity extends MainActivity {
         String_root_first = bundle.getString("double_root_first");
         String_root_second = bundle.getString("double_root_second");
         value = bundle.getString("val");
-        B_SQUARED = bundle.getString("b_squred");
+        B_SQUARED = bundle.getString("b_squared");
         AbsA = bundle.getString("AbsA");
         signInDiscriminantFormula = bundle.getString("signInDiscriminantFormula");
         String_discriminant_sqrt = bundle.getString("double_rooted_discriminant");

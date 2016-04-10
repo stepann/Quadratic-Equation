@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("double_b", double_b);
 
                     B_SQUARED = numberFormat.format(double_b * double_b);
-                    intent.putExtra("b_squred", B_SQUARED);
+                    intent.putExtra("b_squared", B_SQUARED);
 
                     if (double_c < 0 && double_a > 0) intent.putExtra("signInDiscriminantFormula", " +");
                     if (double_a < 0 && double_c > 0) intent.putExtra("signInDiscriminantFormula", " +");
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     double_AbsoluteValueA = Math.abs(double_a);
                     String String_AbsoluteValueA = numberFormat.format(double_AbsoluteValueA);
                     intent.putExtra("AbsA", String_AbsoluteValueA);
-                    //formating String_A to decimal
+
                     String_A = numberFormat.format(double_a);
                     intent.putExtra("kvadratickarovniceA", String_A);
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("symbolC", "+ ");
                     }
 
-                    //diskriminant
+                    //counting discriminant
                     discriminant();
 
                     double_rooted_discriminant = Math.sqrt(double_discriminant);
@@ -109,10 +109,10 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                     if (double_discriminant > 0) {
-                        String String_rooted_dicriminant = numberFormat.format(double_rooted_discriminant);
-                        intent.putExtra("double_rooted_discriminant", String_rooted_dicriminant);
+                        String String_rooted_discriminant = numberFormat.format(double_rooted_discriminant);
+                        intent.putExtra("double_rooted_discriminant", String_rooted_discriminant);
 
-                        //kořen první
+                        //count first root
                         first_root(); //method which counts first root
                         String string_x1 = numberFormat.format(double_root_first);
                         intent.putExtra("double_root_first", string_x1);
@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     if (double_discriminant == 0) {
-                        String String_rooted_dicriminant = numberFormat.format(double_rooted_discriminant);
-                        intent.putExtra("double_rooted_discriminant", String_rooted_dicriminant);
+                        String String_rooted_discriminant = numberFormat.format(double_rooted_discriminant);
+                        intent.putExtra("double_rooted_discriminant", String_rooted_discriminant);
                         first_root(); //method which counts first root
                         String string_x1 = numberFormat.format(double_root_first);
                         intent.putExtra("double_root_first", string_x1);
@@ -173,16 +173,16 @@ public class MainActivity extends AppCompatActivity {
 
         //String_A must not be zero
         if (String_A.trim().isEmpty() || String_A.equals("0") || String_A.equals(".") || String_A.equals("-")) {
-            Toast.makeText(MainActivity.this, R.string.errorA, LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, R.string.err_valueA_is_Missing, LENGTH_SHORT).show();
             return false;
         }
 
         if (String_B.trim().isEmpty() || String_B.equals(".") || String_B.equals("-")) {
-            Toast.makeText(MainActivity.this, R.string.errorB, LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, R.string.err_valueB_is_Missing, LENGTH_SHORT).show();
             return false;
         }
         if (String_C.trim().isEmpty() || String_C.equals(".") || String_C.equals("-")) {
-            Toast.makeText(MainActivity.this, R.string.errorC, LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, R.string.err_ValueC_is_Missing, LENGTH_SHORT).show();
             return false;
         } else return true;
 

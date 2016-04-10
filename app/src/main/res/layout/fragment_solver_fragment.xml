@@ -26,7 +26,6 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -61,7 +60,6 @@
                 android:id="@+id/tv_SolverFragment_x_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_SolverFragment_dicriminant"
                 android:text="x"
                 android:textColor="@android:color/black"
                 android:textSize="30sp" />

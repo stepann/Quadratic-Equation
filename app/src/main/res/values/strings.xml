@@ -8,33 +8,26 @@
     <string name="hodnotaB">value of B</string>
     <string name="hodnotaC">value of C</string>
     <string name="vypocitej">Calculate</string>
-    <string name="x" translatable="false">x</string>
-    <string name="errorA">value of A must not be 0!</string>
-    <string name="errorB">value of B is missing</string>
-    <string name="errorC">value of C is missing!</string>
-    <string name="noRealRoots">no real roots</string>
-    <string name="vzorec" translatable="false">D = b<small><small><sup>2</sup></small></small> - 4 <small>\u2219</small> a <small>\u2219</small> c </string>
-    <string name="rovnice" translatable="false">ax<small><small><sup>2</sup></small></small> + bx + c = 0</string>
+    <string name="err.valueA_is_Missing">value of A must not be 0!</string>
+    <string name="err.valueB_is_Missing">value of B is missing</string>
+    <string name="err.ValueC_is_Missing">value of C is missing!</string>
+    <string name="formula" translatable="false">D = b<small><small><sup>2</sup></small></small> - 4 <small>\u2219</small> a <small>\u2219</small> c </string>
+    <string name="equation" translatable="false">ax<small><small><sup>2</sup></small></small> + bx + c = 0</string>
     <string name="sqrt_D" translatable="false"> \u221aD = ""</string>
-
     <string name="x2" translatable="false">x<small><small><sup>2</sup></small></small></string>
-    <string name="lets_find_disk">1. The discriminant</string>
-    <string name="lets_find_roots">2. The roots</string>
-    <string name="vrsek" translatable="false">-b <small>\u2213</small> \u221aD  </string>
-    <string name="spodek" translatable="false">2 <small>\u2219</small> a </string>
-    <string name="krat_4" translatable="false"> 4 <small>\u2219</small> </string>
-    <string name="krat" translatable="false">  <small>\u2219</small> </string>
+    <string name="first_title">1. The discriminant</string>
+    <string name="second_title">2. The roots</string>
+    <string name="numerator" translatable="false">-b <small>\u2213</small> \u221aD  </string>
+    <string name="denominator" translatable="false">2 <small>\u2219</small> a </string>
+    <string name="times_four" translatable="false"> 4 <small>\u2219</small> </string>
+    <string name="times" translatable="false">  <small>\u2219</small> </string>
     <string name="Solution">Solution</string>
     <string name="Method">Method</string>
-    <string name="spodek2" translatable="false">2 <small>\u2219</small> </string>
-    <string name="krat_char" translatable="false"> <small><small>\u2219</small></small> </string>
-    <string name="x1_sub" translatable="false">x<small><sub>1</sub></small> =</string>
-    <string name="x2_sub" translatable="false">x<small><sub>2</sub></small> =</string>
+    <string name="second_denominator" translatable="false">2 <small>\u2219</small> </string>
+    <string name="times_char" translatable="false"> <small><small>\u2219</small></small> </string>
     <string name="complex_message">Since the diskriminant is less than zero, the equation has only complex roots</string>
-    <string name="disk_zero">Since the diskriminant is zero, the equation has only one root</string>
-    <string name="vrsek_complex" translatable="false">-b <small>\u2213</small> \u221a|D|i</string>
-
-
+    <string name="disc_is_zero">Since the diskriminant is zero, the equation has only one root</string>
+    <string name="numerator_complex" translatable="false">-b <small>\u2213</small> \u221a|D|i</string>
 
 
 </resources>

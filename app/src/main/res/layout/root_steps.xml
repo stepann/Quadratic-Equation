@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lets_find_roots"
+            android:text="@string/second_title"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
@@ -46,14 +46,13 @@
             android:layout_toEndOf="@+id/textView" />
 
         <TextView
-            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/view2"
             android:layout_alignRight="@+id/view2"
             android:layout_below="@+id/view2"
             android:gravity="center"
-            android:text="@string/spodek"
+            android:text="@string/denominator"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:layout_alignLeft="@+id/view2"
@@ -67,7 +66,7 @@
             android:layout_alignEnd="@+id/view2"
             android:layout_alignRight="@+id/view2"
             android:gravity="center"
-            android:text="@string/vrsek"
+            android:text="@string/numerator"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:layout_alignLeft="@+id/view2"
@@ -80,7 +79,7 @@
             android:layout_alignEnd="@+id/view2"
             android:layout_alignRight="@+id/view2"
             android:gravity="center"
-            android:text="@string/vrsek_complex"
+            android:text="@string/numerator_complex"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:layout_alignLeft="@+id/view2"

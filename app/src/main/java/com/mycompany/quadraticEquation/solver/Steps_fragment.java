@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class Steps_fragment extends Fragment {
 
-    TextView tv_b_squred, tv_a, tv_c, tv_discriminantSign, tv_diskriminant, tv_discriminant_sqrt, tv_discriminant_sqrt_char, tv_result_first_numerator, tv_result_second_numerator,
+    TextView tv_b_squared, tv_a, tv_c, tv_discriminantSign, tv_diskriminant, tv_discriminant_sqrt, tv_discriminant_sqrt_char, tv_result_first_numerator, tv_result_second_numerator,
             tv_result_first_denominator, tv_result_second_denominator, tv_result_first, tv_result_second, tv_inform_message, tv_numerator_formula, tv_numerator_formula_complex;
     RelativeLayout rl_root_first, rl_root_second;
     View v_divider_first, v_divider_second;
@@ -28,7 +28,7 @@ public class Steps_fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_steps_fragment, container, false);
 
-        tv_b_squred = (TextView) view.findViewById(R.id.tv_DicriminantSteps_B);
+        tv_b_squared = (TextView) view.findViewById(R.id.tv_DicriminantSteps_B);
         tv_a = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_valueA);
         tv_c = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_valueC);
         tv_discriminantSign = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_sign);
@@ -64,7 +64,7 @@ public class Steps_fragment extends Fragment {
 
         SolverActivity activity = (SolverActivity) getActivity();
 
-        tv_b_squred.setText(activity.B_SQUARED);
+        tv_b_squared.setText(activity.B_SQUARED);
         tv_a.setText(activity.AbsA);
         tv_c.setText(activity.String_C);
         if (activity.signInDiscriminantFormula != null) tv_discriminantSign.setText(activity.signInDiscriminantFormula);
@@ -90,13 +90,13 @@ public class Steps_fragment extends Fragment {
 
         }
 
-        //Strin_discriminant = 0
+        //String_discriminant = 0
         if (activity.value.contains("zero")) {
 
             tv_discriminant_sqrt_char.setVisibility(View.GONE);
-            tv_discriminant_sqrt.setVisibility(View.GONE); //dismiss Strin_discriminant squared
+            tv_discriminant_sqrt.setVisibility(View.GONE); //dismiss String_discriminant squared
             tv_inform_message.setVisibility(View.VISIBLE);
-            tv_inform_message.setText(R.string.disk_zero); //tv_inform_messega which inform user that Strin_discriminant < 0
+            tv_inform_message.setText(R.string.disc_is_zero); //tv_inform_message which inform user that String_discriminant < 0
             rl_root_second.setVisibility(View.GONE);
 
             if (activity.double_b < 0) {
@@ -105,10 +105,10 @@ public class Steps_fragment extends Fragment {
                 tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_discriminant_sqrt);
 
             if (activity.double_a < 0) {
-                tv_result_first_denominator.setText("-2" + getString(R.string.krat_char) + activity.String_A.replace("-", " "));
+                tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
 
             } else {
-                tv_result_first_denominator.setText(getString(R.string.spodek2) + activity.String_A);
+                tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
 
             }
             //print result
@@ -116,7 +116,7 @@ public class Steps_fragment extends Fragment {
 
         }
 
-        //String_discriminant is possitive (D > 0)
+        //String_discriminant is positive (D > 0)
         if (activity.value.contains("positive")) {
             tv_discriminant_sqrt.setText(activity.String_discriminant_sqrt);
 
@@ -149,8 +149,8 @@ public class Steps_fragment extends Fragment {
         } else {
             tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_discriminant_sqrt);
             tv_result_second_numerator.setText("-" + activity.String_B + " - " + activity.String_discriminant_sqrt);
-            tv_result_first_denominator.setText(getString(R.string.spodek2) + activity.String_A);
-            tv_result_second_denominator.setText(getString(R.string.spodek2) + activity.String_A);
+            tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+            tv_result_second_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
         }
     }
 
@@ -158,23 +158,23 @@ public class Steps_fragment extends Fragment {
     private void replace_complex_a_sign() {
         SolverActivity activity = (SolverActivity) getActivity();
         if (activity.double_a < 0) {
-        tv_result_first_denominator.setText("-2" + getString(R.string.krat_char) + activity.String_A.replace("-", " "));
-        tv_result_second_denominator.setText("-2" + getString(R.string.krat_char) + activity.String_A.replace("-", " "));
+        tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
+        tv_result_second_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
 
     } else {
-        tv_result_first_denominator.setText(getString(R.string.spodek2) + activity.String_A);
-        tv_result_second_denominator.setText(getString(R.string.spodek2) + activity.String_A);
+        tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+        tv_result_second_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
     }
 
     }
     private void replace_a__sign() {
         SolverActivity activity = (SolverActivity) getActivity();
         if (activity.double_a < 0) {
-            tv_result_first_denominator.setText("-2" + getString(R.string.krat_char) + activity.String_A.replace("-", " "));
-            tv_result_second_denominator.setText("-2" + getString(R.string.krat_char) + activity.String_A.replace("-", " "));
+            tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
+            tv_result_second_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
         } else {
-            tv_result_first_denominator.setText(getString(R.string.spodek2) + activity.String_A);
-            tv_result_second_denominator.setText(getString(R.string.spodek2) + activity.String_A);
+            tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+            tv_result_second_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
         }
 
     }

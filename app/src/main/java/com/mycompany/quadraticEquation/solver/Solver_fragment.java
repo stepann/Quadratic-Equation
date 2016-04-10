@@ -49,7 +49,7 @@ public class Solver_fragment extends Fragment {
         tv_equal_second = (TextView)v.findViewById(R.id.tv_SolverFragment_equal_second);
 
         updateTextViews();
-        dicriminantTextView();
+        discriminantTextView();
 
     return v;
     }
@@ -90,7 +90,7 @@ public class Solver_fragment extends Fragment {
 
     }
 
-    private void dicriminantTextView() {
+    private void discriminantTextView() {
         SolverActivity activity = (SolverActivity)getActivity();
 
         switch (activity.value) {

@@ -4,20 +4,19 @@
     <string name="aboutAuthor">Štěpán Záliš \nmail: stepan.zalis@gmail.com</string>
     <string name="action_about">Author</string>
     <string name="author">Author</string>
-    <string name="errorA">value of A must not be 0!</string>
-    <string name="errorB">value of B is missing</string>
-    <string name="errorC">value of C is missing!</string>
+    <string name="err.valueA_is_Missing">value of A must not be 0!</string>
+    <string name="err.valueB_is_Missing">value of B is missing</string>
+    <string name="err.ValueC_is_Missing">value of C is missing!</string>
     <string name="hodnotaA">value of A</string>
     <string name="hodnotaB">value of B</string>
     <string name="hodnotaC">value of C</string>
-    <string name="noRealRoots">no real roots</string>
     <string name="title_activity_solver_activity">Result</string>
     <string name="vypocitej">Calculate</string>
     <string name="Solution">Solution</string>
     <string name="Method">Method</string>
-    <string name="lets_find_disk">1. The discriminant</string>
-    <string name="lets_find_roots">2. The roots</string>
+    <string name="first_title">1. The discriminant</string>
+    <string name="second_title">2. The roots</string>
     <string name="complex_message">Since the discriminant is less than zero, the equation has only complex roots</string>
-    <string name="disk_zero">Since the discriminant is zero, the equation has only one root</string>
+    <string name="disc_is_zero">Since the discriminant is zero, the equation has only one root</string>
 
 </resources>
