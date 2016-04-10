@@ -9,7 +9,7 @@ import android.util.Log;
 public class SolverActivity extends MainActivity {
 
     public String String_A, String_B, String_C, symbolB, symbolC, String_discriminant, String_root_first, String_root_second,
-            value, B_SQUARED, AbsA, signInDiscriminantFormula, String_rooted_discriminant, COMPLEX_ROOT_FIRST, COMPLEX_ROOT_SECOND, COMPLEX_DISCRIMINANT;
+            value, B_SQUARED, AbsA, signInDiscriminantFormula, String_discriminant_sqrt, COMPLEX_ROOT_FIRST, COMPLEX_ROOT_SECOND, COMPLEX_DISCRIMINANT;
     public Double double_a, double_b;
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -56,7 +56,7 @@ public class SolverActivity extends MainActivity {
         B_SQUARED = bundle.getString("b_squred");
         AbsA = bundle.getString("AbsA");
         signInDiscriminantFormula = bundle.getString("signInDiscriminantFormula");
-        String_rooted_discriminant = bundle.getString("double_rooted_discriminant");
+        String_discriminant_sqrt = bundle.getString("double_rooted_discriminant");
         COMPLEX_ROOT_FIRST = bundle.getString("complex_1");
         COMPLEX_ROOT_SECOND = bundle.getString("complex_2");
         COMPLEX_DISCRIMINANT = bundle.getString("COMPLEX_DISCRIMINANT");

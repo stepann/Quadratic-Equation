@@ -38,23 +38,23 @@ public class Steps_fragment extends Fragment {
         tv_discriminant_sqrt_char = (TextView) v.findViewById(R.id.tv_DiscriminantSteps_discriminant_sqrt_char);
 
         tv_result_first = (TextView) v.findViewById(R.id.tv_ResultFirst_result_first);
-        tv_result_second = (TextView) v.findViewById(R.id.vysledek_x2);
+        tv_result_second = (TextView) v.findViewById(R.id.tv_ResultSecond_result_second);
 
         tv_inform_message = (TextView) v.findViewById(R.id.tv_DiscriminantSteps_INVISIBLE_message);
 
         tv_numerator_formula = (TextView) v.findViewById(R.id.tv_RootSteps_numerator_formula);
         tv_numerator_formula_complex = (TextView) v.findViewById(R.id.tv_RootSteps_numerator_complex_formula);
         tv_result_first_numerator = (TextView) v.findViewById(R.id.tv_ResultFirst_numerator);
-        tv_result_second_numerator = (TextView) v.findViewById(R.id.vrsek2);
+        tv_result_second_numerator = (TextView) v.findViewById(R.id.tv_ResultSecond_numerator);
 
         tv_result_first_denominator = (TextView) v.findViewById(R.id.tv_ResultFirst_denominator_first);
-        tv_result_second_denominator = (TextView) v.findViewById(R.id.spodek2);
+        tv_result_second_denominator = (TextView) v.findViewById(R.id.tv_ResultSecond_denominator_second);
 
         rl_root_first = (RelativeLayout) v.findViewById(R.id.rl_result_first);
-        rl_root_second = (RelativeLayout) v.findViewById(R.id.x2);
+        rl_root_second = (RelativeLayout) v.findViewById(R.id.rl_result_second);
 
         v_divider_first = v.findViewById(R.id.v_ResultFirst_divider_first);
-        v_divider_second = v.findViewById(R.id.cara2);
+        v_divider_second = v.findViewById(R.id.v_ResultSecond_divider_second);
 
         updateText();
 
@@ -77,9 +77,9 @@ public class Steps_fragment extends Fragment {
         if (activity.value.contains("negative")) {
 
             tv_discriminant_sqrt_char.setVisibility(View.GONE);
-            tv_discriminant_sqrt.setVisibility(View.GONE); //dismiss Strin_discriminant squared
+            tv_discriminant_sqrt.setVisibility(View.GONE); //dismiss String_discriminant squared
             tv_inform_message.setVisibility(View.VISIBLE);
-            tv_inform_message.setText(R.string.complex_message); //tv_inform_messega which inform user that Strin_discriminant < 0
+            tv_inform_message.setText(R.string.complex_message); //tv_inform_message which inform user that String_discriminant < 0
             tv_numerator_formula.setVisibility(View.GONE); //dismiss formula in real numbers
             tv_numerator_formula_complex.setVisibility(View.VISIBLE); //set formula in complex numbers
 
@@ -127,8 +127,8 @@ public class Steps_fragment extends Fragment {
             rl_root_second.setVisibility(View.GONE);
 
             if (activity.double_b < 0) {
-                tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_rooted_discriminant);
-            } else tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_rooted_discriminant);
+                tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_discriminant_sqrt);
+            } else tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_discriminant_sqrt);
 
             if (activity.double_a < 0) {
                 tv_result_first_denominator.setText("-2" + getString(R.string.krat_char) + activity.String_A.replace("-", " "));
@@ -142,16 +142,16 @@ public class Steps_fragment extends Fragment {
 
         }
 
-        //String_discriminant == +
+        //String_discriminant is possitive (D > 0)
         if (activity.value.contains("positive")) {
-            tv_discriminant_sqrt.setText(activity.String_rooted_discriminant);
+            tv_discriminant_sqrt.setText(activity.String_discriminant_sqrt);
 
             if (activity.double_b < 0) {
-                tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_rooted_discriminant);
-                tv_result_second_numerator.setText(activity.String_B.replace("-", " ") + " - " + activity.String_rooted_discriminant);
+                tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_discriminant_sqrt);
+                tv_result_second_numerator.setText(activity.String_B.replace("-", " ") + " - " + activity.String_discriminant_sqrt);
             } else {
-                tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_rooted_discriminant);
-                tv_result_second_numerator.setText("-" + activity.String_B + " - " + activity.String_rooted_discriminant);
+                tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_discriminant_sqrt);
+                tv_result_second_numerator.setText("-" + activity.String_B + " - " + activity.String_discriminant_sqrt);
                 tv_result_first_denominator.setText(getString(R.string.spodek2) + activity.String_A);
                 tv_result_second_denominator.setText(getString(R.string.spodek2) + activity.String_A);
             }
@@ -163,11 +163,11 @@ public class Steps_fragment extends Fragment {
                 tv_result_second_denominator.setText(getString(R.string.spodek2) + activity.String_A);
             }
 
-            if (activity.String_rooted_discriminant.length() >= 3 && activity.String_rooted_discriminant.length() <= 5) {
+            if (activity.String_discriminant_sqrt.length() >= 3 && activity.String_discriminant_sqrt.length() <= 5) {
                 v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
                 v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
 
-            } else if (activity.String_rooted_discriminant.length() >= 6) {
+            } else if (activity.String_discriminant_sqrt.length() >= 6) {
                 v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
                 v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
             }
