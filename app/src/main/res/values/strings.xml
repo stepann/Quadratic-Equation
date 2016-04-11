@@ -28,6 +28,8 @@
     <string name="complex_message">Since the diskriminant is less than zero, the equation has only complex roots</string>
     <string name="disc_is_zero">Since the diskriminant is zero, the equation has only one root</string>
     <string name="numerator_complex" translatable="false">-b <small>\u2213</small> \u221a|D|i</string>
+    <string name="fragmentSolver_subOne"><sub>1</sub></string>
+    <string name="fragmentSolver_subTwo"><sub>2</sub></string>
 
 
 </resources>

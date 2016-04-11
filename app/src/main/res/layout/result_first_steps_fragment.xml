@@ -20,7 +20,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
         <View
-            android:layout_width="110dp"
+            android:layout_width="85dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:id="@+id/v_ResultFirst_divider_first"

@@ -2,7 +2,6 @@ package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,25 +94,20 @@ public class Solver_fragment extends Fragment {
 
         switch (activity.value) {
             case ("negative"):
-                tv_x_first_sub.setText(Html.fromHtml("<sub>1</sub>"));
-                tv_x_second_sub.setText(Html.fromHtml("<sub>2<sub>"));
                 tv_root_first.setText(activity.COMPLEX_ROOT_FIRST);
                 tv_root_second.setText(activity.COMPLEX_ROOT_SECOND);
                 break;
 
             case ("positive"):
-                tv_x_first_sub.setText(Html.fromHtml("<sub>1</sub>"));
-                tv_x_second_sub.setText(Html.fromHtml("<sub>2<sub>"));
                 tv_root_first.setText(activity.String_root_first);
                 tv_root_second.setText(activity.String_root_second);
                 break;
 
-            case("zero"):
+            case("zero"): //delete one root
                 tv_x_second.setText("");
                 tv_x_second_sub.setText("");
                 tv_equal_second.setText("");
                 tv_root_second.setText("");
-                tv_x_first_sub.setText(Html.fromHtml("<sub>1</sub>"));
                 tv_root_first.setText(activity.String_root_first);
 
         }

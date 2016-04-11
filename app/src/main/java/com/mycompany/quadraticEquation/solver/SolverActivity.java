@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 public class SolverActivity extends MainActivity {
 
@@ -22,7 +21,7 @@ public class SolverActivity extends MainActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
@@ -62,8 +61,6 @@ public class SolverActivity extends MainActivity {
         COMPLEX_ROOT_FIRST = bundle.getString("complex_1");
         COMPLEX_ROOT_SECOND = bundle.getString("complex_2");
         COMPLEX_DISCRIMINANT = bundle.getString("COMPLEX_DISCRIMINANT");
-        Log.i("TAG", "getVariables: " + signInDiscriminantFormula);
-
     }
 
 }
