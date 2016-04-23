@@ -18,5 +18,8 @@
     <string name="second_title">2. The roots</string>
     <string name="complex_message">Since the discriminant is less than zero, the equation has only complex roots</string>
     <string name="disc_is_zero">Since the discriminant is zero, the equation has only one root</string>
+    <string name="err_longA">value A is too long</string>
+    <string name="err_longB">value B is too long</string>
+    <string name="err_longC">value C is too long</string>
 
 </resources>

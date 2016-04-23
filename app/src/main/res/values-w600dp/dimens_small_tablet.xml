@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="activity_horizontal_padding">50dp</dimen>
+
+    <dimen name="view_width_small">145dp</dimen>
+    <dimen name="view_width_medium">170dp</dimen>
+    <dimen name="view_width_high">220dp</dimen>
+    <dimen name="view_width_max">250dp</dimen>
+    <dimen name="divider_complex">140dp</dimen>
+
+    <!--complexlDivider -->
+    <dimen name="view_width_small_complex">165dp</dimen>
+    <dimen name="view_width_medium_complex">190dp</dimen>
+    <dimen name="view_width_high_complex">230dp</dimen>
+    <dimen name="view_width_max_complex">275dp</dimen>
+
+    <dimen name="main_activity_top_padding">20dp</dimen>
+    <dimen name="steps_fragment_top_margin">25dp</dimen>
+    <dimen name="solver_fragment_top_margin">80dp</dimen>
+
+    <!-- Screen sizes -->
+    <dimen name="main_activity_equation_textSize">40sp</dimen>
+    <dimen name="main_activity_edt_text_textSize">25sp</dimen>
+    <dimen name="main_activity_btn_textSize">25sp</dimen>
+
+    <dimen name="discriminant_steps_textSize">30sp</dimen>
+    <dimen name="equation_solver_frgm_textSize">40sp</dimen>
+
+    <dimen name="solver_frgm_textSize">40sp</dimen>
+    <dimen name="solver_frgm_sub_textSize">20sp</dimen>
+</resources>

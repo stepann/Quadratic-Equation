@@ -3,6 +3,7 @@ package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,8 +121,8 @@ public class Steps_fragment extends Fragment {
         if (activity.value.contains("positive")) {
             tv_discriminant_sqrt.setText(activity.String_discriminant_sqrt);
 
-            replace_b__sign();
-            replace_a__sign();
+            replace_b_sign();
+            replace_a_sign();
             real_longerDivider();
 
             //print results
@@ -141,7 +142,7 @@ public class Steps_fragment extends Fragment {
             tv_result_second_numerator.setText("-" + activity.String_B + " - " + "|-" + activity.COMPLEX_DISCRIMINANT + "|" + "i");
         }
     }
-    private void replace_b__sign() {
+    private void replace_b_sign() {
         SolverActivity activity = (SolverActivity) getActivity();
         if (activity.double_b < 0) {
             tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_discriminant_sqrt);
@@ -167,7 +168,7 @@ public class Steps_fragment extends Fragment {
     }
 
     }
-    private void replace_a__sign() {
+    private void replace_a_sign() {
         SolverActivity activity = (SolverActivity) getActivity();
         if (activity.double_a < 0) {
             tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
@@ -183,26 +184,50 @@ public class Steps_fragment extends Fragment {
     private void real_longerDivider() {
         SolverActivity activity = (SolverActivity) getActivity();
         if (activity.String_discriminant_sqrt.length() >= 3 && activity.String_discriminant_sqrt.length() <= 5) {
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
+            if(activity.double_b < 10) {
+                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
+                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
+            }
+            if(activity.double_b > 10) {
+                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium);
+                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium);
+            }
 
         } else if (activity.String_discriminant_sqrt.length() >= 6) {
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
+            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high);
+            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high);
+            if(activity.double_b > 1000) {
+                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max);
+                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max);
+            }
         }
     }
+
     private void complex_longerDivider() {
+        v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
+        v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
         SolverActivity activity = (SolverActivity) getActivity();
-        if (activity.COMPLEX_DISCRIMINANT.length() >= 3 && activity.COMPLEX_DISCRIMINANT.length() <= 4) {
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
-        } else if (activity.COMPLEX_DISCRIMINANT.length() >= 5 && activity.COMPLEX_DISCRIMINANT.length() < 5.5) {
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width);
+        Log.i("TAG1", "complex_longerDivider: " + activity.double_b);
+        if (activity.COMPLEX_DISCRIMINANT.length() >= 3 && activity.COMPLEX_DISCRIMINANT.length() <= 5) {
+            if(activity.double_b < 10) {
+                Log.i("TAG2", "complex_longerDivider: " + "case 1");
+                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small_complex);
+                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small_complex);
+            }
+            if(activity.double_b <= 100 && activity.double_b > 10) {
+                Log.i("TAG3", "complex_longerDivider: " + "case 2");
+                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium_complex);
+                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium_complex);
+            }
 
         } else if (activity.COMPLEX_DISCRIMINANT.length() >= 6) {
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_bigger);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_bigger);
+            Log.i("TAG4", "complex_longerDivider: " + "case 3");
+            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high_complex);
+            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high_complex);
+            if(activity.double_b > 1000) {
+                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max_complex);
+                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max_complex);
+            }
         }
 
     }

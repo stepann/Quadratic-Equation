@@ -7,21 +7,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/steps_fragment_top_margin">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/second_title"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="375dp"
         android:layout_height="73dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/steps_fragment_top_margin">
 
         <TextView
             android:id="@+id/textView"
@@ -32,11 +32,11 @@
             android:layout_centerVertical="true"
             android:text="x ="
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <View
             android:id="@+id/view2"
-            android:layout_width="105dp"
+            android:layout_width="110dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_marginLeft="6dp"
@@ -54,7 +54,7 @@
             android:gravity="center"
             android:text="@string/denominator"
             android:textColor="@android:color/black"
-            android:textSize="25sp"
+            android:textSize="@dimen/discriminant_steps_textSize"
             android:layout_alignLeft="@+id/view2"
             android:layout_alignStart="@+id/view2" />
 
@@ -68,7 +68,7 @@
             android:gravity="center"
             android:text="@string/numerator"
             android:textColor="@android:color/black"
-            android:textSize="25sp"
+            android:textSize="@dimen/discriminant_steps_textSize"
             android:layout_alignLeft="@+id/view2"
             android:layout_alignStart="@+id/view2" />
         <TextView
@@ -81,7 +81,7 @@
             android:gravity="center"
             android:text="@string/numerator_complex"
             android:textColor="@android:color/black"
-            android:textSize="25sp"
+            android:textSize="@dimen/discriminant_steps_textSize"
             android:layout_alignLeft="@+id/view2"
             android:layout_alignStart="@+id/view2"
             android:visibility="gone" />

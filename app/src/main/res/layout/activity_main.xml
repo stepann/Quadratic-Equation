@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_padding"
+    android:paddingLeft="@dimen/activity_horizontal_padding"
+    android:paddingRight="@dimen/activity_horizontal_padding"
+    android:paddingTop="@dimen/main_activity_top_padding"
     tools:context="com.mycompany.quadraticEquation.solver.MainActivity">
 
 
@@ -26,7 +26,7 @@
             android:gravity="center_horizontal"
             android:text="@string/equation"
             android:textColor="@color/textColor"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             />
 
     </LinearLayout>
@@ -46,10 +46,9 @@
            android:layout_height="wrap_content"
            android:gravity="center_horizontal"
            android:hint="@string/hodnotaA"
-
            android:inputType="number|numberDecimal|numberSigned"
            android:textColor="@color/textColor"
-           android:textSize="20sp" />
+           android:textSize="@dimen/main_activity_edt_text_textSize" />
        <EditText
            android:id="@+id/edt_MainActivity_valueB"
            android:layout_width="wrap_content"
@@ -61,7 +60,7 @@
            android:singleLine="true"
            android:textColor="@color/textColor"
            android:typeface="normal"
-           android:textSize="20sp" />
+           android:textSize="@dimen/main_activity_edt_text_textSize" />
        <EditText
            android:id="@+id/edt_MainActivity_valueC"
            android:layout_width="wrap_content"
@@ -73,7 +72,7 @@
            android:singleLine="true"
            android:textColor="@color/textColor"
            android:typeface="normal"
-           android:textSize="20sp" />
+           android:textSize="@dimen/main_activity_edt_text_textSize" />
 
     </LinearLayout>
 
@@ -93,7 +92,7 @@
         android:minWidth="220dp"
         android:text="@string/vypocitej"
         android:textColor="@color/primary_text"
-        android:textSize="15sp"
+        android:textSize="@dimen/main_activity_btn_textSize"
         android:theme="@style/ButtonStyle">
     </Button>
 

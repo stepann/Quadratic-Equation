@@ -5,6 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,6 +38,33 @@ public class MainActivity extends AppCompatActivity {
         edt_valueA = (EditText) findViewById(R.id.edt_MainActivity_valueA);
         edt_valueB = (EditText) findViewById(R.id.edt_MainActivity_valueB);
         edt_valueC = (EditText) findViewById(R.id.edt_MainActivity_valueC);
+
+        edt_valueA.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String txt = s.toString();
+                if(txt.contains("-") || txt.contains(".") || txt.contains(",")) {
+                    //Log.i("TAG5", "afterTextChanged: case 1");
+                    edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(5)});
+                }
+                else {
+                    //Log.i("TAG8", "afterTextChanged: case 2");
+                    edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(4)});
+                }
+
+            }
+        });
+
         Button btn_solveEquation = (Button) findViewById(R.id.btn_MainActivity_solveEquation);
 
         btn_solveEquation.setOnClickListener(new View.OnClickListener() {
@@ -171,6 +201,18 @@ public class MainActivity extends AppCompatActivity {
         String_B = edt_valueB.getText().toString();
         String_C = edt_valueC.getText().toString();
 
+       /* if((String_A.contains("-") && String_A.length() > 5) || String_A.length() > 4) {
+            Toast.makeText(MainActivity.this, R.string.err_longA, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if((String_B.contains("-") && String_B.length() > 5) || String_B.length() > 4) {
+            Toast.makeText(MainActivity.this, R.string.err_longB, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if((String_C.contains("-") && String_C.length() > 5) || String_C.length() > 4) {
+            Toast.makeText(MainActivity.this, R.string.err_longC, Toast.LENGTH_SHORT).show();
+            return false;
+        }*/
         //String_A must not be zero
         if (String_A.trim().isEmpty() || String_A.equals("0") || String_A.equals(".") || String_A.equals("-")) {
             Toast.makeText(MainActivity.this, R.string.err_valueA_is_Missing, LENGTH_SHORT).show();

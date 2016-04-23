@@ -18,5 +18,8 @@
     <string name="second_title">2. Kořeny rovnice</string>
     <string name="complex_message">Pokud je diskriminant záporný, rovnice má řešení v komplexních číslech</string>
     <string name="disc_is_zero">Pokud je diskriminant rovný nule, rovnice má pouze jeden kořen</string>
+    <string name="err_longA">hodnota A je moc velká</string>
+    <string name="err_longB">hodnota B je moc velká</string>
+    <string name="err_longC">hodnota C je moc velká</string>
 
 </resources>
