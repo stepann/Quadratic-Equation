@@ -17,7 +17,7 @@
     <string name="x2" translatable="false">x<small><small><sup>2</sup></small></small></string>
     <string name="first_title">1. The discriminant</string>
     <string name="second_title">2. The roots</string>
-    <string name="numerator" translatable="false">-b <small>\u2213</small> \u221aD  </string>
+    <string name="numerator" translatable="false">-b \u00B1 \u221aD  </string>
     <string name="denominator" translatable="false">2 <small>\u00D7</small> a </string>
     <string name="times_four" translatable="false"> 4 <small>\u00D7</small> </string>
     <string name="times" translatable="false">  <small>\u00D7</small> </string>
@@ -27,7 +27,7 @@
     <string name="times_char" translatable="false"> <small><small>\u00D7</small></small> </string>
     <string name="complex_message">Since the diskriminant is less than zero, the equation has only complex roots</string>
     <string name="disc_is_zero">Since the discriminant is zero, the equation has only one root</string>
-    <string name="numerator_complex" translatable="false">-b <small>\u2213</small> \u221a|D|i</string>
+    <string name="numerator_complex" translatable="false">-b \u00B1 \u221a|D|i</string>
     <string name="fragmentSolver_subOne" translatable="false"><sub>1</sub></string>
     <string name="fragmentSolver_subTwo" translatable="false"><sub>2</sub></string>
     <string name="err_longA">Value A is too long</string>

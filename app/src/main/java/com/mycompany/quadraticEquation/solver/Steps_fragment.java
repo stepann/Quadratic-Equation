@@ -3,7 +3,6 @@ package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ public class Steps_fragment extends Fragment {
     TextView tv_b_squared, tv_a, tv_c, tv_discriminantSign, tv_diskriminant, tv_discriminant_sqrt, tv_discriminant_sqrt_char, tv_result_first_numerator, tv_result_second_numerator,
             tv_result_first_denominator, tv_result_second_denominator, tv_result_first, tv_result_second, tv_inform_message, tv_numerator_formula, tv_numerator_formula_complex;
     RelativeLayout rl_root_first, rl_root_second;
-    View v_divider_first, v_divider_second;
+    View v_divider_first, v_divider_second, v_divider_formula;
 
     public Steps_fragment() {
 
@@ -55,6 +54,7 @@ public class Steps_fragment extends Fragment {
 
         v_divider_first = view.findViewById(R.id.v_ResultFirst_divider_first);
         v_divider_second = view.findViewById(R.id.v_ResultSecond_divider_second);
+        v_divider_formula = view.findViewById(R.id.view2);
 
         updateText();
 
@@ -194,9 +194,11 @@ public class Steps_fragment extends Fragment {
             }
 
         } else if (activity.String_discriminant_sqrt.length() >= 6) {
+            //Log.i("TAG8", "real_longerDivider:tag " );
             v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high);
             v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high);
             if(activity.double_b > 1000) {
+                //Log.i("TAG9", "real_longerDivider:tag2 " );
                 v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max);
                 v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max);
             }
@@ -204,24 +206,25 @@ public class Steps_fragment extends Fragment {
     }
 
     private void complex_longerDivider() {
+        v_divider_formula.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
         v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
         v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
         SolverActivity activity = (SolverActivity) getActivity();
-        Log.i("TAG1", "complex_longerDivider: " + activity.double_b);
+        //Log.i("TAG1", "complex_longerDivider: " + activity.double_b);
         if (activity.COMPLEX_DISCRIMINANT.length() >= 3 && activity.COMPLEX_DISCRIMINANT.length() <= 5) {
             if(activity.double_b < 10) {
-                Log.i("TAG2", "complex_longerDivider: " + "case 1");
+               // Log.i("TAG2", "complex_longerDivider: " + "case 1");
                 v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small_complex);
                 v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small_complex);
             }
             if(activity.double_b <= 100 && activity.double_b > 10) {
-                Log.i("TAG3", "complex_longerDivider: " + "case 2");
+                //Log.i("TAG3", "complex_longerDivider: " + "case 2");
                 v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium_complex);
                 v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium_complex);
             }
 
         } else if (activity.COMPLEX_DISCRIMINANT.length() >= 6) {
-            Log.i("TAG4", "complex_longerDivider: " + "case 3");
+            //Log.i("TAG4", "complex_longerDivider: " + "case 3");
             v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high_complex);
             v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high_complex);
             if(activity.double_b > 1000) {

@@ -11,7 +11,7 @@
     <!--realDivider -->
     <dimen name="view_width_small">115dp</dimen>
     <dimen name="view_width_medium">140dp</dimen>
-    <dimen name="view_width_high">160dp</dimen>
+    <dimen name="view_width_high">165dp</dimen>
     <dimen name="view_width_max">190dp</dimen>
 
     <!--complexlDivider -->
