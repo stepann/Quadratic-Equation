@@ -48,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 String txt = s.toString();
-                if(txt.contains("-") || txt.contains(".") || txt.contains(",")) {
-                    if(txt.contains("-") && (txt.contains("."))) {
+
+                if(txt.contains("-") && (txt.contains("."))) {
                         edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
-                    }
+                 }
                     //Log.i("TAG5", "afterTextChanged: case 1");
-                   if(((txt.contains(".") || txt.contains(",")) && !txt.contains("-"))) {
+                if(((txt.contains(".") || txt.contains(",")) && !txt.contains("-"))) {
                        edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(5)});
-                   }
                 }
                 else
                     edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(4)});
@@ -111,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn_solveEquation = (Button) findViewById(R.id.btn_MainActivity_solveEquation);
 
-            btn_solveEquation.setOnClickListener(new View.OnClickListener() {
+        assert btn_solveEquation != null;
+        btn_solveEquation.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
