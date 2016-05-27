@@ -6,20 +6,6 @@
     <dimen name="solver_fragment_top_margin">40dp</dimen>
     <dimen name="steps_fragment_top_margin">5dp</dimen>
 
-    <dimen name="divider_complex">120dp</dimen>
-
-    <!--realDivider -->
-    <dimen name="view_width_small">115dp</dimen>
-    <dimen name="view_width_medium">140dp</dimen>
-    <dimen name="view_width_high">165dp</dimen>
-    <dimen name="view_width_max">190dp</dimen>
-
-    <!--complexlDivider -->
-    <dimen name="view_width_small_complex">140dp</dimen>
-    <dimen name="view_width_medium_complex">155dp</dimen>
-    <dimen name="view_width_high_complex">180dp</dimen>
-    <dimen name="view_width_max_complex">210dp</dimen>
-
     <!-- Screen sizes -->
     <dimen name="main_activity_equation_textSize">34sp</dimen>
     <dimen name="main_activity_edt_text_textSize">20sp</dimen>

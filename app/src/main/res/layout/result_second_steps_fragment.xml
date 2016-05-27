@@ -1,92 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="73dp"
+    android:layout_marginTop="@dimen/main_activity_top_padding"
+    android:id="@+id/rl_result_second">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x = "
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/discriminant_steps_textSize"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/x" />
+    <View
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        android:id="@+id/v_ResultSecond_divider_second"
+        android:layout_width="wrap_content"
+        android:layout_alignBottom="@+id/tv_ResultSecond_numerator"
+        android:layout_alignLeft="@+id/tv_ResultSecond_numerator"
+        android:layout_alignStart="@+id/tv_ResultSecond_numerator"
+        android:layout_alignRight="@+id/tv_ResultSecond_numerator"
+        android:layout_alignEnd="@+id/tv_ResultSecond_numerator" />
 
-    <RelativeLayout
+    <TextView
+        android:textSize="@dimen/discriminant_steps_textSize"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:id="@+id/tv_ResultSecond_numerator"
+        android:gravity="left"
+        android:layout_alignBottom="@+id/x"
+        android:layout_toRightOf="@+id/x"
+        android:layout_toEndOf="@+id/x"
+        android:layout_marginBottom="18dp" />
+
+    <TextView
+        android:textSize="@dimen/discriminant_steps_textSize"
+        android:textColor="@android:color/black"
         android:layout_width="match_parent"
-        android:layout_height="73dp"
-        android:layout_marginTop="@dimen/main_activity_top_padding"
-        android:id="@+id/rl_result_second">
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:gravity="center"
+        android:id="@+id/tv_ResultSecond_denominator_second"
+        android:layout_below="@+id/v_ResultSecond_divider_second"
+        android:layout_alignLeft="@+id/v_ResultSecond_divider_second"
+        android:layout_alignStart="@+id/v_ResultSecond_divider_second"
+        android:layout_alignRight="@+id/tv_ResultSecond_numerator"
+        android:layout_alignEnd="@+id/tv_ResultSecond_numerator" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="x ="
-            android:textSize="@dimen/discriminant_steps_textSize"
-            android:textColor="@android:color/black"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-        <View
-            android:layout_width="85dp"
-            android:layout_height="1dp"
-            android:background="@android:color/black"
-            android:id="@+id/v_ResultSecond_divider_second"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginStart="40dp" />
-        <TextView
-            android:textColor="@android:color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:gravity="center"
-            android:textSize="@dimen/discriminant_steps_textSize"
-            android:id="@+id/tv_ResultSecond_numerator"
-            android:layout_above="@+id/v_ResultSecond_divider_second"
-            android:layout_alignLeft="@+id/v_ResultSecond_divider_second"
-            android:layout_alignStart="@+id/v_ResultSecond_divider_second"
-            android:layout_alignRight="@+id/v_ResultSecond_divider_second"
-            android:layout_alignEnd="@+id/v_ResultSecond_divider_second"
+    <TextView
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=" = "
+        android:id="@+id/equal"
+        android:textSize="@dimen/discriminant_steps_textSize"
+        android:layout_alignTop="@+id/x"
+        android:layout_toRightOf="@+id/v_ResultSecond_divider_second"
+        android:layout_toEndOf="@+id/v_ResultSecond_divider_second" />
 
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/tv_ResultSecond_denominator_second"
-            android:textSize="@dimen/discriminant_steps_textSize"
-            android:gravity="center"
-            android:textColor="@android:color/black"
-            android:layout_below="@+id/v_ResultSecond_divider_second"
-            android:layout_alignRight="@+id/v_ResultSecond_divider_second"
-            android:layout_alignEnd="@+id/v_ResultSecond_divider_second"
-            android:layout_alignLeft="@+id/v_ResultSecond_divider_second"
-            android:layout_alignStart="@+id/v_ResultSecond_divider_second"
-             />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="="
-            android:textSize="@dimen/discriminant_steps_textSize"
-            android:textColor="@android:color/black"
-            android:id="@+id/textView3"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/v_ResultSecond_divider_second"
-            android:layout_toEndOf="@+id/v_ResultSecond_divider_second"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text=""
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/discriminant_steps_textSize"
-            android:id="@+id/tv_ResultSecond_result_second"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/textView3"
-            android:layout_toEndOf="@+id/textView3"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp" />
-
-
-    </RelativeLayout>
-
-</LinearLayout>
+    <TextView
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:id="@+id/tv_ResultSecond_result_second"
+        android:textSize="@dimen/discriminant_steps_textSize"
+        android:layout_alignTop="@+id/equal"
+        android:layout_toRightOf="@+id/equal"
+        android:layout_toEndOf="@+id/equal" />
+</RelativeLayout>

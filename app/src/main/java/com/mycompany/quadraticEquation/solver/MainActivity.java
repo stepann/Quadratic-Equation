@@ -41,177 +41,172 @@ public class MainActivity extends AppCompatActivity {
 
         edt_valueA.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
                 String txt = s.toString();
+                if (txt.contains("-") && txt.contains("."))
+                    edt_valueA.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
+                if (txt.contains(".") && !txt.contains("-") || (!txt.contains(".") && txt.contains("-")))
+                    edt_valueA.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
+                if (!txt.contains(".") && !txt.contains("-"))
+                    edt_valueA.setFilters(new InputFilter[]{new InputFilter.LengthFilter(4)});
 
-                if(txt.contains("-") && (txt.contains("."))) {
-                        edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
-                 }
-                    //Log.i("TAG5", "afterTextChanged: case 1");
-                if(((txt.contains(".") || txt.contains(",")) && !txt.contains("-"))) {
-                       edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(5)});
-                }
-                else
-                    edt_valueA.setFilters(new InputFilter[] {new InputFilter.LengthFilter(4)});
-                }
-
+            }
         });
+
         edt_valueB.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
                 String txt = s.toString();
-                if(txt.contains("-") || txt.contains(".") || txt.contains(",")) {
-                    if(txt.contains("-") && (txt.contains("."))) {
-                        edt_valueB.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
-                    }
-                    //Log.i("TAG5", "afterTextChanged: case 1");
-                    if(((txt.contains(".") || txt.contains(",")) && !txt.contains("-"))) {
-                        edt_valueB.setFilters(new InputFilter[] {new InputFilter.LengthFilter(5)});
-                    }
-                }
-                else
-                    edt_valueB.setFilters(new InputFilter[] {new InputFilter.LengthFilter(4)});
+                if (txt.contains("-") && txt.contains("."))
+                    edt_valueB.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
+                if (txt.contains(".") && !txt.contains("-") || (!txt.contains(".") && txt.contains("-")))
+                    edt_valueB.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
+                if (!txt.contains(".") && !txt.contains("-"))
+                    edt_valueB.setFilters(new InputFilter[]{new InputFilter.LengthFilter(4)});
             }
-
-        });
+            });
         edt_valueC.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
                 String txt = s.toString();
-                if(txt.contains("-") || txt.contains(".") || txt.contains(",")) {
-                    if(txt.contains("-") && (txt.contains("."))) {
-                        edt_valueC.setFilters(new InputFilter[] {new InputFilter.LengthFilter(6)});
-                    }
-                    //Log.i("TAG5", "afterTextChanged: case 1");
-                    if(((txt.contains(".") || txt.contains(",")) && !txt.contains("-"))) {
-                        edt_valueC.setFilters(new InputFilter[] {new InputFilter.LengthFilter(5)});
-                    }
-                }
-                else
-                    edt_valueC.setFilters(new InputFilter[] {new InputFilter.LengthFilter(4)});
+                if (txt.contains("-") && txt.contains("."))
+                    edt_valueC.setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
+                if (txt.contains(".") && !txt.contains("-") || (!txt.contains(".") && txt.contains("-")))
+                    edt_valueC.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
+                if (!txt.contains(".") && !txt.contains("-"))
+                    edt_valueC.setFilters(new InputFilter[]{new InputFilter.LengthFilter(4)});
             }
-
         });
 
         Button btn_solveEquation = (Button) findViewById(R.id.btn_MainActivity_solveEquation);
 
         assert btn_solveEquation != null;
         btn_solveEquation.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
 
-                    if (checkInputValues()) {
+                if (checkInputValues()) {
 
-                        Intent intent = new Intent(MainActivity.this, SolverActivity.class);
-                        NumberFormat numberFormat = new DecimalFormat("#.##");
+                    Intent intent = new Intent(MainActivity.this, SolverActivity.class);
+                    NumberFormat numberFormat = new DecimalFormat("#.##");
 
-                        //parse String to Double
-                        double_a = Double.parseDouble(String_A);
-                        double_b = Double.parseDouble(String_B);
-                        double_c = Double.parseDouble(String_C);
+                    //parse String to Double
+                    double_a = Double.parseDouble(String_A);
+                    double_b = Double.parseDouble(String_B);
+                    double_c = Double.parseDouble(String_C);
 
-                        intent.putExtra("double_a", double_a);
-                        intent.putExtra("double_b", double_b);
+                    intent.putExtra("double_a", double_a);
+                    intent.putExtra("double_b", double_b);
 
-                        B_SQUARED = numberFormat.format(double_b * double_b);
-                        intent.putExtra("b_squared", B_SQUARED);
+                    B_SQUARED = numberFormat.format(double_b * double_b);
+                    intent.putExtra("b_squared", B_SQUARED);
 
-                        if (double_c < 0 && double_a > 0) intent.putExtra("signInDiscriminantFormula", " +");
-                        if (double_a < 0 && double_c > 0) intent.putExtra("signInDiscriminantFormula", " +");
+                    if (double_c < 0 && double_a > 0)
+                        intent.putExtra("signInDiscriminantFormula", " +");
+                    if (double_a < 0 && double_c > 0)
+                        intent.putExtra("signInDiscriminantFormula", " +");
 
-                        double_AbsoluteValueA = Math.abs(double_a);
-                        String String_AbsoluteValueA = numberFormat.format(double_AbsoluteValueA);
-                        intent.putExtra("AbsA", String_AbsoluteValueA);
+                    double_AbsoluteValueA = Math.abs(double_a);
+                    String String_AbsoluteValueA = numberFormat.format(double_AbsoluteValueA);
+                    intent.putExtra("AbsA", String_AbsoluteValueA);
 
-                        String_A = numberFormat.format(double_a);
-                        intent.putExtra("kvadratickarovniceA", String_A);
+                    String_A = numberFormat.format(double_a);
+                    intent.putExtra("kvadratickarovniceA", String_A);
 
-                        if (double_b < 0) {
-                            //make absolute value and sent sign
-                            String_B = numberFormat.format(Math.abs(double_b));
-                            intent.putExtra("kvadratickarovniceB", String_B);
-                            intent.putExtra("symbolB", " - ");
-                        } else {
-                            String_B = numberFormat.format(Math.abs(double_b));
-                            intent.putExtra("kvadratickarovniceB", String_B);
-                            intent.putExtra("symbolB", " + ");
-                        }
-
-                        if (double_c < 0) {
-                            //make absolute value and send sign
-                            String_C = numberFormat.format(Math.abs(double_c));
-                            intent.putExtra("kvadratickarovniceC", String_C);
-                            intent.putExtra("symbolC", "- ");
-
-                        } else {
-                            String_C = numberFormat.format(Math.abs(double_c));
-                            intent.putExtra("kvadratickarovniceC", String_C);
-                            intent.putExtra("symbolC", "+ ");
-                        }
-
-                        //counting discriminant
-                        discriminant();
-
-                        double_rooted_discriminant = Math.sqrt(double_discriminant);
-                        double_rooted_discriminant_complex = Math.sqrt(Math.abs(double_discriminant));
-
-                        String String_Discriminant = numberFormat.format(double_discriminant);
-                        intent.putExtra("diskriminant", " " + String_Discriminant);
-
-                        if (double_discriminant < 0) {
-                            COMPLEX_DISCRIMINANT = numberFormat.format(double_rooted_discriminant_complex);
-                            intent.putExtra("COMPLEX_DISCRIMINANT", COMPLEX_DISCRIMINANT);
-                            count_complex_roots(); //method for counting roots in complex numbers
-                            intent.putExtra("val", "negative");
-                            intent.putExtra("complex_1", COMPLEX_ROOT_FIRST);
-                            intent.putExtra("complex_2", COMPLEX_ROOT_SECOND);
-
-                        }
-                        if (double_discriminant > 0) {
-                            String String_rooted_discriminant = numberFormat.format(double_rooted_discriminant);
-                            intent.putExtra("double_rooted_discriminant", String_rooted_discriminant);
-
-                            //count first root
-                            first_root(); //method which counts first root
-                            String string_x1 = numberFormat.format(double_root_first);
-                            intent.putExtra("double_root_first", string_x1);
-                            second_root(); //method which counts second root
-                            String string_x2 = numberFormat.format(double_root_second);
-                            intent.putExtra("double_root_second", string_x2);
-                            intent.putExtra("val", "positive");
-                        }
-
-                        if (double_discriminant == 0) {
-                            String String_rooted_discriminant = numberFormat.format(double_rooted_discriminant);
-                            intent.putExtra("double_rooted_discriminant", String_rooted_discriminant);
-                            first_root(); //method which counts first root
-                            String string_x1 = numberFormat.format(double_root_first);
-                            intent.putExtra("double_root_first", string_x1);
-                            intent.putExtra("val", "zero");
-                        }
-                        //start intent and send data*//*
-                        startActivity(intent);
+                    if (double_b < 0) {
+                        //make absolute value and sent sign
+                        String_B = numberFormat.format(Math.abs(double_b));
+                        intent.putExtra("kvadratickarovniceB", String_B);
+                        intent.putExtra("symbolB", " - ");
+                    } else {
+                        String_B = numberFormat.format(Math.abs(double_b));
+                        intent.putExtra("kvadratickarovniceB", String_B);
+                        intent.putExtra("symbolB", " + ");
                     }
+
+                    if (double_c < 0) {
+                        //make absolute value and send sign
+                        String_C = numberFormat.format(Math.abs(double_c));
+                        intent.putExtra("kvadratickarovniceC", String_C);
+                        intent.putExtra("symbolC", "- ");
+
+                    } else {
+                        String_C = numberFormat.format(Math.abs(double_c));
+                        intent.putExtra("kvadratickarovniceC", String_C);
+                        intent.putExtra("symbolC", "+ ");
+                    }
+
+                    //counting discriminant
+                    discriminant();
+
+                    double_rooted_discriminant = Math.sqrt(double_discriminant);
+                    double_rooted_discriminant_complex = Math.sqrt(Math.abs(double_discriminant));
+
+                    String String_Discriminant = numberFormat.format(double_discriminant);
+                    intent.putExtra("diskriminant", " " + String_Discriminant);
+
+                    if (double_discriminant < 0) {
+                        COMPLEX_DISCRIMINANT = numberFormat.format(double_rooted_discriminant_complex);
+                        intent.putExtra("COMPLEX_DISCRIMINANT", COMPLEX_DISCRIMINANT);
+                        count_complex_roots(); //method for counting roots in complex numbers
+                        intent.putExtra("val", "negative");
+                        intent.putExtra("complex_1", COMPLEX_ROOT_FIRST);
+                        intent.putExtra("complex_2", COMPLEX_ROOT_SECOND);
+
+                    }
+                    if (double_discriminant > 0) {
+                        String String_rooted_discriminant = numberFormat.format(double_rooted_discriminant);
+                        intent.putExtra("double_rooted_discriminant", String_rooted_discriminant);
+
+                        //count first root
+                        first_root(); //method which counts first root
+                        String string_x1 = numberFormat.format(double_root_first);
+                        intent.putExtra("double_root_first", string_x1);
+                        second_root(); //method which counts second root
+                        String string_x2 = numberFormat.format(double_root_second);
+                        intent.putExtra("double_root_second", string_x2);
+                        intent.putExtra("val", "positive");
+                    }
+
+                    if (double_discriminant == 0) {
+                        String String_rooted_discriminant = numberFormat.format(double_rooted_discriminant);
+                        intent.putExtra("double_rooted_discriminant", String_rooted_discriminant);
+                        first_root(); //method which counts first root
+                        String string_x1 = numberFormat.format(double_root_first);
+                        intent.putExtra("double_root_first", string_x1);
+                        intent.putExtra("val", "zero");
+                    }
+                    //start intent and send data*//*
+                    startActivity(intent);
                 }
+            }
 
-            });
-        }
-
+        });
+    }
 
 
     //create overflow menu
@@ -247,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
         String_C = edt_valueC.getText().toString();
 
         //String_A must not be zero
-        if (String_A.trim().isEmpty() || String_A.equals("0") || String_A.equals(".") || String_A.equals("-")) {
+        if (String_A.trim().isEmpty() || String_A.equals("0") || String_A.equals("00") || String_A.equals("000")|| String_A.equals("0000") || String_A.equals(".") || String_A.equals("-")) {
             //edt_valueA.setError(getString(R.string.err_valueA_is_Missing)); black screen
             Toast.makeText(MainActivity.this, R.string.err_valueA_is_Missing, LENGTH_SHORT).show();
             return false;

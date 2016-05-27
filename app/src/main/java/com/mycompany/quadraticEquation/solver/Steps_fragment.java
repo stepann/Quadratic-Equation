@@ -21,7 +21,6 @@ public class Steps_fragment extends Fragment {
 
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class Steps_fragment extends Fragment {
 
         tv_numerator_formula = (TextView) view.findViewById(R.id.tv_RootSteps_numerator_formula);
         tv_numerator_formula_complex = (TextView) view.findViewById(R.id.tv_RootSteps_numerator_complex_formula);
+
         tv_result_first_numerator = (TextView) view.findViewById(R.id.tv_ResultFirst_numerator);
         tv_result_second_numerator = (TextView) view.findViewById(R.id.tv_ResultSecond_numerator);
 
@@ -83,7 +83,6 @@ public class Steps_fragment extends Fragment {
 
             replace_complex_b_sign();
             replace_complex_a_sign();
-            complex_longerDivider();
 
             //print results
             tv_result_first.setText(activity.COMPLEX_ROOT_FIRST);
@@ -123,7 +122,6 @@ public class Steps_fragment extends Fragment {
 
             replace_b_sign();
             replace_a_sign();
-            real_longerDivider();
 
             //print results
             tv_result_first.setText(activity.String_root_first);
@@ -155,7 +153,7 @@ public class Steps_fragment extends Fragment {
         }
     }
 
-    //changing sign if te A s minus
+    //changing sign if the A is minus
     private void replace_complex_a_sign() {
         SolverActivity activity = (SolverActivity) getActivity();
         if (activity.double_a < 0) {
@@ -179,63 +177,9 @@ public class Steps_fragment extends Fragment {
         }
 
     }
-
-    //make divider longer depending on length
-    private void real_longerDivider() {
-        SolverActivity activity = (SolverActivity) getActivity();
-        if (activity.String_discriminant_sqrt.length() >= 3 && activity.String_discriminant_sqrt.length() <= 5) {
-            if(activity.double_b < 10) {
-                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
-                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small);
-            }
-            if(activity.double_b > 10) {
-                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium);
-                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium);
-            }
-
-        } else if (activity.String_discriminant_sqrt.length() >= 6) {
-            //Log.i("TAG8", "real_longerDivider:tag " );
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high);
-            if(activity.double_b > 1000) {
-                //Log.i("TAG9", "real_longerDivider:tag2 " );
-                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max);
-                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max);
-            }
-        }
-    }
-
-    private void complex_longerDivider() {
-        v_divider_formula.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
-        v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
-        v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.divider_complex);
-        SolverActivity activity = (SolverActivity) getActivity();
-        //Log.i("TAG1", "complex_longerDivider: " + activity.double_b);
-        if (activity.COMPLEX_DISCRIMINANT.length() >= 3 && activity.COMPLEX_DISCRIMINANT.length() <= 5) {
-            if(activity.double_b < 10) {
-               // Log.i("TAG2", "complex_longerDivider: " + "case 1");
-                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small_complex);
-                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_small_complex);
-            }
-            if(activity.double_b <= 100 && activity.double_b > 10) {
-                //Log.i("TAG3", "complex_longerDivider: " + "case 2");
-                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium_complex);
-                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_medium_complex);
-            }
-
-        } else if (activity.COMPLEX_DISCRIMINANT.length() >= 6) {
-            //Log.i("TAG4", "complex_longerDivider: " + "case 3");
-            v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high_complex);
-            v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_high_complex);
-            if(activity.double_b > 1000) {
-                v_divider_first.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max_complex);
-                v_divider_second.getLayoutParams().width = (int) getResources().getDimension(R.dimen.view_width_max_complex);
-            }
-        }
-
-    }
-
 }
+
+
 
 
 
