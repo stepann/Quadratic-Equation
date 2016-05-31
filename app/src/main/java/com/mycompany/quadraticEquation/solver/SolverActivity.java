@@ -5,11 +5,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
-public class Solver_activity extends MainActivity {
+public class SolverActivity extends MainActivity {
 
-    public String A, B, C, symbolB, symbolC, D, string_koren1, string_koren2,
-            value, B_2, AbsA, disk, String_odm_d, complex_root_1, complex_root_2, String_odm_d_complex;
-    public Double a_this, b_this;
+    public String String_A, String_B, String_C, symbolB, symbolC, String_discriminant, String_root_first, String_root_second,
+            value, B_SQUARED, AbsA, signInDiscriminantFormula, String_discriminant_sqrt, COMPLEX_ROOT_FIRST, COMPLEX_ROOT_SECOND, COMPLEX_DISCRIMINANT;
+    public Double double_a, double_b;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
@@ -20,8 +20,10 @@ public class Solver_activity extends MainActivity {
         setContentView(R.layout.activity_solver_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -34,9 +36,6 @@ public class Solver_activity extends MainActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         getVariables();
-
-
-
     }
 
     //method which gets variables from Main activity
@@ -44,25 +43,24 @@ public class Solver_activity extends MainActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        a_this = bundle.getDouble("a");
-        b_this = bundle.getDouble("b");
-        A = bundle.getString("kvadratickarovniceA");
-        B = bundle.getString("kvadratickarovniceB");
-        C = bundle.getString("kvadratickarovniceC");
+        double_a = bundle.getDouble("double_a");
+        double_b = bundle.getDouble("double_b");
+        String_A = bundle.getString("kvadratickarovniceA");
+        String_B = bundle.getString("kvadratickarovniceB");
+        String_C = bundle.getString("kvadratickarovniceC");
         symbolB = bundle.getString("symbolB");
         symbolC = bundle.getString("symbolC");
-        D = bundle.getString("diskriminant");
-        string_koren1 = bundle.getString("x1");
-        string_koren2 = bundle.getString("x2");
+        String_discriminant = bundle.getString("diskriminant");
+        String_root_first = bundle.getString("double_root_first");
+        String_root_second = bundle.getString("double_root_second");
         value = bundle.getString("val");
-        B_2 = bundle.getString("b_2");
+        B_SQUARED = bundle.getString("b_squared");
         AbsA = bundle.getString("AbsA");
-        disk = bundle.getString("disk");
-        String_odm_d = bundle.getString("odm_d");
-        complex_root_1 = bundle.getString("complex_1");
-        complex_root_2 = bundle.getString("complex_2");
-        String_odm_d_complex = bundle.getString("String_odm_d_complex");
-
+        signInDiscriminantFormula = bundle.getString("signInDiscriminantFormula");
+        String_discriminant_sqrt = bundle.getString("double_rooted_discriminant");
+        COMPLEX_ROOT_FIRST = bundle.getString("complex_1");
+        COMPLEX_ROOT_SECOND = bundle.getString("complex_2");
+        COMPLEX_DISCRIMINANT = bundle.getString("COMPLEX_DISCRIMINANT");
     }
 
 }

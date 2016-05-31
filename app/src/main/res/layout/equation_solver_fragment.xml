@@ -7,6 +7,7 @@
     >
 
     <LinearLayout
+        android:paddingTop="@dimen/main_activity_top_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -15,65 +16,65 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Ax"
-            android:textSize="34sp"
+            android:id="@+id/tv_EquationSolverFragment_A"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:textColor="@color/textColor"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/x2"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>
 
 
         <TextView
-            android:id="@+id/symbolB"
+            android:id="@+id/tv_EquationSolverFragment_symbolB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:text=" "
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/Bx"
+            android:id="@+id/tv_EquationSolverFragment_B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/Bx1"
+            android:id="@+id/tv_EquationSolverFragment_Bx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:text="x "
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/symbolC"
+            android:id="@+id/tv_EquationSolverFragment_symbolC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:text=" "
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>
 
         <TextView
-            android:id="@+id/Cx"
+            android:id="@+id/tv_EquationSolverFragment_Cx"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="34sp"
+            android:textSize="@dimen/main_activity_equation_textSize"
             android:text="= 0"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/textColor"/>

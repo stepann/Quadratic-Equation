@@ -3,7 +3,6 @@ package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,134 +12,174 @@ import android.widget.TextView;
 
 public class Steps_fragment extends Fragment {
 
-    TextView b_2, a, c, sign_disk, diskriminant, sqrt_diskriminant, sqrt_text, vrsek, vrsek2,
-            spodek, spodek2, vysledek_x1, vysledek_x2, message, vrsek_vzorec, vrsek_vzorec_complex;
-    RelativeLayout x1, x2;
-    View cara, cara2;
+    TextView tv_b_squared, tv_a, tv_c, tv_discriminantSign, tv_diskriminant, tv_discriminant_sqrt, tv_discriminant_sqrt_char, tv_result_first_numerator, tv_result_second_numerator,
+            tv_result_first_denominator, tv_result_second_denominator, tv_result_first, tv_result_second, tv_inform_message, tv_numerator_formula, tv_numerator_formula_complex;
+    RelativeLayout rl_root_first, rl_root_second;
+    View v_divider_first, v_divider_second, v_divider_formula;
 
     public Steps_fragment() {
 
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_steps_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_steps_fragment, container, false);
 
-        b_2 = (TextView) v.findViewById(R.id.b_2);
-        a = (TextView) v.findViewById(R.id.a);
-        c = (TextView) v.findViewById(R.id.c);
-        sign_disk = (TextView) v.findViewById(R.id.sign_disk);
-        diskriminant = (TextView) v.findViewById(R.id.diskriminant);
-        sqrt_diskriminant = (TextView) v.findViewById(R.id.sqrt_disk);
-        sqrt_text = (TextView) v.findViewById(R.id.sqrt_disk_text);
+        tv_b_squared = (TextView) view.findViewById(R.id.tv_DicriminantSteps_B);
+        tv_a = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_valueA);
+        tv_c = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_valueC);
+        tv_discriminantSign = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_sign);
+        tv_diskriminant = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_diskriminant);
+        tv_discriminant_sqrt = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_discriminant_sqrt);
+        tv_discriminant_sqrt_char = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_discriminant_sqrt_char);
 
-        vysledek_x1 = (TextView) v.findViewById(R.id.vysledek_x1);
-        vysledek_x2 = (TextView) v.findViewById(R.id.vysledek_x2);
+        tv_result_first = (TextView) view.findViewById(R.id.tv_ResultFirst_result_first);
+        tv_result_second = (TextView) view.findViewById(R.id.tv_ResultSecond_result_second);
 
-        message = (TextView) v.findViewById(R.id.complex_message);
+        tv_inform_message = (TextView) view.findViewById(R.id.tv_DiscriminantSteps_INVISIBLE_message);
 
-        vrsek_vzorec = (TextView) v.findViewById(R.id.vrsek_vzorec);
-        vrsek_vzorec_complex = (TextView) v.findViewById(R.id.vrsek_vzorec_complex);
-        vrsek = (TextView) v.findViewById(R.id.vrsek);
-        vrsek2 = (TextView) v.findViewById(R.id.vrsek2);
+        tv_numerator_formula = (TextView) view.findViewById(R.id.tv_RootSteps_numerator_formula);
+        tv_numerator_formula_complex = (TextView) view.findViewById(R.id.tv_RootSteps_numerator_complex_formula);
 
-        spodek = (TextView) v.findViewById(R.id.spodek);
-        spodek2 = (TextView) v.findViewById(R.id.spodek2);
+        tv_result_first_numerator = (TextView) view.findViewById(R.id.tv_ResultFirst_numerator);
+        tv_result_second_numerator = (TextView) view.findViewById(R.id.tv_ResultSecond_numerator);
 
-        x1 = (RelativeLayout) v.findViewById(R.id.x1);
-        x2 = (RelativeLayout) v.findViewById(R.id.x2);
+        tv_result_first_denominator = (TextView) view.findViewById(R.id.tv_ResultFirst_denominator_first);
+        tv_result_second_denominator = (TextView) view.findViewById(R.id.tv_ResultSecond_denominator_second);
 
-        cara = v.findViewById(R.id.cara);
-        cara2 = v.findViewById(R.id.cara2);
+        rl_root_first = (RelativeLayout) view.findViewById(R.id.rl_result_first);
+        rl_root_second = (RelativeLayout) view.findViewById(R.id.rl_result_second);
+
+        v_divider_first = view.findViewById(R.id.v_ResultFirst_divider_first);
+        v_divider_second = view.findViewById(R.id.v_ResultSecond_divider_second);
+        v_divider_formula = view.findViewById(R.id.view2);
 
         updateText();
-        return v;
 
-
+        return view;
     }
 
     private void updateText() {
 
-        Solver_activity activity = (Solver_activity) getActivity();
+        SolverActivity activity = (SolverActivity) getActivity();
+
+        tv_b_squared.setText(activity.B_SQUARED);
+        tv_a.setText(activity.AbsA);
+        tv_c.setText(activity.String_C);
+        if (activity.signInDiscriminantFormula != null) tv_discriminantSign.setText(activity.signInDiscriminantFormula);
+        tv_diskriminant.setText(activity.String_discriminant);
 
 
-        b_2.setText(activity.B_2);
-        a.setText(activity.AbsA);
-        c.setText(activity.C);
-        sign_disk.setText(activity.disk);
-        //Log.e("disk", "disk " + activity.disk);
-        diskriminant.setText(activity.D);
+        if (activity.value.contains("negative")) {
 
+            tv_discriminant_sqrt_char.setVisibility(View.GONE);
+            tv_discriminant_sqrt.setVisibility(View.GONE); //dismiss String_discriminant squared
+            tv_inform_message.setVisibility(View.VISIBLE);
+            tv_inform_message.setText(R.string.complex_message); //tv_inform_message which inform user that String_discriminant < 0
+            tv_numerator_formula.setVisibility(View.GONE); //dismiss formula in real numbers
+            tv_numerator_formula_complex.setVisibility(View.VISIBLE); //set formula in complex numbers
 
-        if (activity.D.contains("-")) {
+            replace_complex_b_sign();
+            replace_complex_a_sign();
 
-            sqrt_text.setVisibility(View.GONE);
-            sqrt_diskriminant.setVisibility(View.GONE); //dismiss D squared
-            message.setVisibility(View.VISIBLE); //message which inform user that D < 0
-            vrsek_vzorec.setVisibility(View.GONE); //dismiss formula in real numbers
-            vrsek_vzorec_complex.setVisibility(View.VISIBLE); //set formula in complex numbers
+            //print results
+            tv_result_first.setText(activity.COMPLEX_ROOT_FIRST);
+            tv_result_second.setText(activity.COMPLEX_ROOT_SECOND);
 
+        }
 
-            if (activity.b_this < 0) {
-                Log.e("TAGads", "updateText: " + "B is less than 0");
-                vrsek.setText(activity.B.replace("-", " ") + " + " + "|-" + activity.String_odm_d_complex + "|" + "i");
-                vrsek2.setText(activity.B.replace("-", " ") + " - " + "|-" + activity.String_odm_d_complex + "|" + "i");
+        //String_discriminant = 0
+        if (activity.value.contains("zero")) {
+
+            tv_discriminant_sqrt_char.setVisibility(View.GONE);
+            tv_discriminant_sqrt.setVisibility(View.GONE); //dismiss String_discriminant squared
+            tv_inform_message.setVisibility(View.VISIBLE);
+            tv_inform_message.setText(R.string.disc_is_zero); //tv_inform_message which inform user that String_discriminant < 0
+            rl_root_second.setVisibility(View.GONE);
+
+            if (activity.double_b < 0) {
+                tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_discriminant_sqrt);
+            } else
+                tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_discriminant_sqrt);
+
+            if (activity.double_a < 0) {
+                tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
+
             } else {
-                vrsek.setText("-" + activity.B + " + " + "|-" + activity.String_odm_d_complex + "|" + "i");
-                vrsek2.setText("-" + activity.B + " - " + "|-" + activity.String_odm_d_complex + "|" + "i");
-            }
-            if (activity.a_this < 0) {
-                spodek.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
-                spodek2.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
-                spodek.setText(getString(R.string.spodek2) + activity.A);
-                spodek2.setText(getString(R.string.spodek2) + activity.A);
-            } else {
-                spodek.setText(getString(R.string.spodek2) + activity.A);
-                spodek2.setText(getString(R.string.spodek2) + activity.A);
-            }
-            if (activity.String_odm_d_complex.length() >= 4) {
-                cara.getLayoutParams().width = 600;
-                cara2.getLayoutParams().width = 600;
-            }
+                tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
 
-            vysledek_x1.setText(activity.complex_root_1);
-            vysledek_x2.setText(activity.complex_root_2);
+            }
+            //print result
+            tv_result_first.setText(activity.String_root_first);
 
+        }
+
+        //String_discriminant is positive (D > 0)
+        if (activity.value.contains("positive")) {
+            tv_discriminant_sqrt.setText(activity.String_discriminant_sqrt);
+
+            replace_b_sign();
+            replace_a_sign();
+
+            //print results
+            tv_result_first.setText(activity.String_root_first);
+            tv_result_second.setText(activity.String_root_second);
+        }
+    }
+
+    //changing sign if the B is minus
+    private void replace_complex_b_sign() {
+        SolverActivity activity = (SolverActivity) getActivity();
+        if (activity.double_b < 0) {
+            tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + "|-" + activity.COMPLEX_DISCRIMINANT + "|" + "i");
+            tv_result_second_numerator.setText(activity.String_B.replace("-", " ") + " - " + "|-" + activity.COMPLEX_DISCRIMINANT + "|" + "i");
         } else {
-            sqrt_diskriminant.setText(activity.String_odm_d);
+            tv_result_first_numerator.setText("-" + activity.String_B + " + " + "|-" + activity.COMPLEX_DISCRIMINANT + "|" + "i");
+            tv_result_second_numerator.setText("-" + activity.String_B + " - " + "|-" + activity.COMPLEX_DISCRIMINANT + "|" + "i");
+        }
+    }
+    private void replace_b_sign() {
+        SolverActivity activity = (SolverActivity) getActivity();
+        if (activity.double_b < 0) {
+            tv_result_first_numerator.setText(activity.String_B.replace("-", " ") + " + " + activity.String_discriminant_sqrt);
+            tv_result_second_numerator.setText(activity.String_B.replace("-", " ") + " - " + activity.String_discriminant_sqrt);
+        } else {
+            tv_result_first_numerator.setText("-" + activity.String_B + " + " + activity.String_discriminant_sqrt);
+            tv_result_second_numerator.setText("-" + activity.String_B + " - " + activity.String_discriminant_sqrt);
+            tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+            tv_result_second_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+        }
+    }
 
-            if (activity.b_this < 0) {
-                vrsek.setText(activity.B.replace("-", " ") + " + " + activity.String_odm_d);
-                vrsek2.setText(activity.B.replace("-", " ") + " - " + activity.String_odm_d);
-            } else {
-                vrsek.setText("-" + activity.B + " + " + activity.String_odm_d);
-                vrsek2.setText("-" + activity.B + " - " + activity.String_odm_d);
-                spodek.setText(getString(R.string.spodek2) + activity.A);
-                spodek2.setText(getString(R.string.spodek2) + activity.A);
-            }
-            if (activity.a_this < 0) {
-                spodek.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
-                spodek2.setText("-2" + getString(R.string.krat_char) + activity.A.replace("-", " "));
-            } else {
-                spodek.setText(getString(R.string.spodek2) + activity.A);
-                spodek2.setText(getString(R.string.spodek2) + activity.A);
-            }
+    //changing sign if the A is minus
+    private void replace_complex_a_sign() {
+        SolverActivity activity = (SolverActivity) getActivity();
+        if (activity.double_a < 0) {
+        tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
+        tv_result_second_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
 
-            vysledek_x1.setText(activity.string_koren1);
-            vysledek_x2.setText(activity.string_koren2);
+    } else {
+        tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+        tv_result_second_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+    }
 
-            if (activity.String_odm_d.length() >= 4) {
-                cara.getLayoutParams().width = 600;
-                cara2.getLayoutParams().width = 600;
-            }
+    }
+    private void replace_a_sign() {
+        SolverActivity activity = (SolverActivity) getActivity();
+        if (activity.double_a < 0) {
+            tv_result_first_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
+            tv_result_second_denominator.setText("-2" + getString(R.string.times_char) + activity.String_A.replace("-", " "));
+        } else {
+            tv_result_first_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
+            tv_result_second_denominator.setText(getString(R.string.second_denominator) + activity.String_A);
         }
 
     }
-
 }
+
+
 
 
 

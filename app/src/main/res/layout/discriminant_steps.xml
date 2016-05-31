@@ -7,21 +7,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/steps_fragment_top_margin">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lets_find_disk"
+            android:text="@string/first_title"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/steps_fragment_top_margin"
         android:orientation="horizontal">
 
 
@@ -29,9 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
-            android:text="@string/vzorec"
+            android:text="@string/formula"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
     </LinearLayout>
 
@@ -45,53 +46,53 @@
             android:layout_height="wrap_content"
             android:text="D = "
             android:textColor="@android:color/black"
-            android:textSize="25sp">
+            android:textSize="@dimen/discriminant_steps_textSize">
         </TextView>
 
         <TextView
-            android:id="@+id/b_2"
+            android:id="@+id/tv_DicriminantSteps_B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <TextView
-            android:id="@+id/sign_disk"
+            android:id="@+id/tv_DiscriminantSteps_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" -"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/krat_4"
+            android:text="@string/times_four"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <TextView
-            android:id="@+id/a"
+            android:id="@+id/tv_DiscriminantSteps_valueA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@string/krat"
+            android:text="@string/times"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
 
         <TextView
-            android:id="@+id/c"
+            android:id="@+id/tv_DiscriminantSteps_valueC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
     </LinearLayout>
 
@@ -105,15 +106,15 @@
             android:layout_height="wrap_content"
             android:text="D = "
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <TextView
-            android:id="@+id/diskriminant"
+            android:id="@+id/tv_DiscriminantSteps_diskriminant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="@android:color/black"
-            android:textSize="25sp">
+            android:textSize="@dimen/discriminant_steps_textSize">
 
         </TextView>
     </LinearLayout>
@@ -123,20 +124,20 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/sqrt_disk_text"
+            android:id="@+id/tv_DiscriminantSteps_discriminant_sqrt_char"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sqrt_D"
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
         <TextView
-            android:id="@+id/sqrt_disk"
+            android:id="@+id/tv_DiscriminantSteps_discriminant_sqrt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" "
             android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:textSize="@dimen/discriminant_steps_textSize" />
 
 
     </LinearLayout>
@@ -144,16 +145,16 @@
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_activity_top_padding">
 
         <TextView
-            android:id="@+id/complex_message"
+            android:id="@+id/tv_DiscriminantSteps_INVISIBLE_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="8dp"
-            android:text="@string/complex_message"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="@dimen/main_activity_edt_text_textSize"
             android:visibility="gone" />
 
     </LinearLayout>

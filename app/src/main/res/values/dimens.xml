@@ -1,5 +1,22 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_padding">10dp</dimen>
+    <dimen name="activity_vertical_padding">5dp</dimen>
+    <dimen name="main_activity_top_padding">12dp</dimen>
+    <dimen name="solver_fragment_top_margin">40dp</dimen>
+    <dimen name="steps_fragment_top_margin">5dp</dimen>
+
+    <!-- Screen sizes -->
+    <dimen name="main_activity_equation_textSize">34sp</dimen>
+    <dimen name="main_activity_edt_text_textSize">20sp</dimen>
+    <dimen name="main_activity_btn_textSize">15sp</dimen>
+
+    <dimen name="discriminant_steps_textSize">25sp</dimen>
+    <dimen name="equation_solver_frgm_textSize">34sp</dimen>
+
+    <dimen name="solver_frgm_textSize">30sp</dimen>
+    <dimen name="solver_frgm_sub_textSize">16sp</dimen>
+
+
+
 </resources>
