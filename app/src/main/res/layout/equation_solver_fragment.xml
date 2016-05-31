@@ -5,9 +5,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:scrollbarSize="3dp"
+    android:scrollbarSize="1dp"
     android:fillViewport="true"
     android:foregroundGravity="right"
+    android:scrollbarThumbHorizontal="@color/secondary_text_material_light"
     >
 
     <LinearLayout
