@@ -25,7 +25,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class MainActivity extends AppCompatActivity {
 
     public double double_a, double_b, double_c, double_discriminant, double_root_first, double_root_second,
-            double_rooted_discriminant, double_rooted_discriminant_complex, double_AbsoluteValueA, double_AbsoluteValueB, double_AbsoluteValueC;
+            double_rooted_discriminant, double_rooted_discriminant_complex, double_AbsoluteValueA;
     private EditText edt_valueA, edt_valueB, edt_valueC;
     private String String_A, String_B, String_C, B_SQUARED, COMPLEX_ROOT_FIRST, COMPLEX_ROOT_SECOND, COMPLEX_DISCRIMINANT;
 
@@ -243,7 +243,6 @@ public class MainActivity extends AppCompatActivity {
 
         //String_A must not be zero
         if (String_A.trim().isEmpty() || String_A.equals("0") || String_A.equals("00") || String_A.equals("000")|| String_A.equals("0000") || String_A.equals(".") || String_A.equals("-")) {
-            //edt_valueA.setError(getString(R.string.err_valueA_is_Missing)); black screen
             Toast.makeText(MainActivity.this, R.string.err_valueA_is_Missing, LENGTH_SHORT).show();
             return false;
         }

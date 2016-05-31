@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<HorizontalScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:scrollbarSize="3dp"
+    android:fillViewport="true"
+    android:foregroundGravity="right"
     >
 
     <LinearLayout
+        android:gravity="center_horizontal"
         android:paddingTop="@dimen/main_activity_top_padding"
         android:layout_width="match_parent"
+        android:layout_gravity="right"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,6 +86,9 @@
 
     </LinearLayout>
 
-    </LinearLayout>
+
+</HorizontalScrollView>
+
+
 
 
