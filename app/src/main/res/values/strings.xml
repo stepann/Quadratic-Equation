@@ -33,6 +33,7 @@
     <string name="err_longA">Value A is too long</string>
     <string name="err_longB">Value B is too long</string>
     <string name="err_longC">Value C is too long</string>
+    <string name="complex_numbers">Complex numbers</string>
 
 
 </resources>

@@ -34,7 +34,7 @@
                 android:id="@+id/tv_SolverFragment_dicriminant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="D ="
+                android:text="D = "
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/solver_frgm_textSize" />
 

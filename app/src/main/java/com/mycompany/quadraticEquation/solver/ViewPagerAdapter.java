@@ -16,7 +16,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
-    public void addFragments(Fragment fragments,String titles) {
+    public void addFragments(Fragment fragments, String titles) {
         this.fragments.add(fragments);
         this.tabTitles.add(titles);
 
@@ -31,6 +31,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return fragments.size();
     }
+
     public CharSequence getPageTitle(int position) {
         return tabTitles.get(position);
     }
