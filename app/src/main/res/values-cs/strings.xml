@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kvadratická rovnice</string>
+
+    <!-- overflow menu -->
     <string name="action_about">Autor</string>
     <string name="author">Autor</string>
+
+    <!-- errors -->
     <string name="err.valueB_is_Missing">doplňte hodnotu B</string>
     <string name="err.ValueC_is_Missing">doplňte hodnotu C</string>
     <string name="err.valueA_is_Missing">Kvadratický člen nemůže být 0!</string>
-    <string name="hodnotaA">hodnota A</string>
-    <string name="hodnotaB">hodnota B</string>
-    <string name="hodnotaC">hodnota C</string>
-    <string name="title_activity_solver_activity">Výsledek</string>
-    <string name="vypocitej">Vypočítej</string>
-    <string name="aboutAuthor">Štěpán Záliš \nmail: stepan.zalis@gmail.com</string>
-    <string name="Solution">Řešení</string>
-    <string name="Method">Postup</string>
-    <string name="first_title">1. Diskriminant</string>
-    <string name="second_title">2. Kořeny rovnice</string>
-    <string name="complex_message">Pokud je diskriminant záporný, rovnice má řešení v komplexních číslech</string>
-    <string name="disc_is_zero">Pokud je diskriminant rovný nule, rovnice má pouze jeden kořen</string>
     <string name="err_longA">hodnota A je moc velká</string>
     <string name="err_longB">hodnota B je moc velká</string>
     <string name="err_longC">hodnota C je moc velká</string>
-    <string name="complex_numbers">Komplexní čísla</string>
+
+    <!-- editTexts -->
+    <string name="hodnotaA">hodnota A</string>
+    <string name="hodnotaB">hodnota B</string>
+    <string name="hodnotaC">hodnota C</string>
+
+    <string name="title_activity_solver_activity">Výsledek</string>
+    <string name="vypocitej">Vypočítej</string>
+    <string name="aboutAuthor">Štěpán Záliš \nmail: stepan.zalis@gmail.com</string>
+
+    <!-- tabs -->
+    <string name="Solution">Řešení</string>
+    <string name="Method">Postup</string>
+
+    <!--titles in steps_fragment-->
+    <string name="first_title">1. Diskriminant</string>
+    <string name="second_title">2. Kořeny rovnice</string>
+
+    <!-- explanations -->
+    <string name="complex_message">Pokud je diskriminant záporný, rovnice má řešení v komplexních číslech</string>
+    <string name="disc_is_zero">Pokud je diskriminant rovný nule, rovnice má pouze jeden kořen</string>
+
 
 </resources>

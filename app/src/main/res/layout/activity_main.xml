@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:minWidth="220dp"
-        android:text="@string/vypocitej"
+        android:text="@string/solveEquation"
         android:textColor="@color/primary_text"
         android:textSize="@dimen/main_activity_btn_textSize"
         android:theme="@style/ButtonStyle">
