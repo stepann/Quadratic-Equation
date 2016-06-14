@@ -7,43 +7,44 @@ import java.text.NumberFormat;
 public class CountEquation {
 
     NumberFormat numberFormat = new DecimalFormat("#.##");
+
     Double discriminant, b_squared, first_root, second_root, absoluteValueA, sqrtDiscriminant, numerator, denominator;
-    public String str_discriminant, str_b_squared, str_first_root, str_second_root, str_absoluteValueA,
+    String str_discriminant, str_b_squared, str_first_root, str_second_root, str_absoluteValueA,
             str_sqrt_discriminant, complex_first_root, complex_second_root;
 
     CountEquation() {
     }
 
-    public Double discriminant(Double dbl_a, Double dbl_b, Double dbl_c) {
-        return discriminant = (dbl_b * dbl_b) - 4 * dbl_a * dbl_c;
+    public Double discriminant(Double value_A, Double value_B, Double value_C) {
+        return discriminant = (value_B * value_B) - 4 * value_A * value_C;
     }
 
-    public double b_squared(Double dbl_b) {
-        return b_squared = dbl_b * dbl_b;
+    public double b_squared(Double value_B) {
+        return b_squared = value_B * value_B;
     }
 
-    public Double first_root(Double dbl_b, Double discriminant, Double dbl_a) {
-        return first_root = (-dbl_b + Math.sqrt(discriminant)) / (2 * dbl_a);
+    public Double first_root(Double value_B, Double discriminant, Double value_A) {
+        return first_root = (-value_B + Math.sqrt(discriminant)) / (2 * value_A);
     }
 
-    public Double second_root(Double dbl_b, Double discriminant, Double dbl_a) {
-        return second_root = (-dbl_b - Math.sqrt(discriminant)) / (2 * dbl_a);
+    public Double second_root(Double value_B, Double discriminant, Double value_A) {
+        return second_root = (-value_B - Math.sqrt(discriminant)) / (2 * value_A);
     }
 
-    public Double absoluteValueA(Double dbl_a) {
-        return absoluteValueA = Math.abs(dbl_a);
+    public Double absoluteValueA(Double value_A) {
+        return absoluteValueA = Math.abs(value_A);
     }
 
     public Double sqrtDiscriminant(Double discriminant) {
         return sqrtDiscriminant = Math.sqrt(discriminant);
     }
 
-    public Double numerator(Double dbl_b, Double dbl_a) {
-        return numerator = (-dbl_b / (2 * dbl_a));
+    public Double numerator(Double value_B, Double value_A) {
+        return numerator = (-value_B / (2 * value_A));
     }
 
-    public Double denominator(Double dbl_a, Double dbl_discriminant) {
-        return denominator = Math.sqrt((Math.abs(dbl_discriminant))) / (2 * dbl_a);
+    public Double denominator(Double value_A, Double dbl_discriminant) {
+        return denominator = Math.sqrt((Math.abs(dbl_discriminant))) / (2 * value_A);
     }
 
 

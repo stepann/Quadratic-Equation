@@ -72,10 +72,8 @@ public class Steps_fragment extends Fragment {
 
         tv_b_squared.setText(activity.B_squared);
         tv_a.setText(activity.absoluteValueA);
-        Log.i("TAG", "updateText: " + activity.absoluteValueA);
         tv_c.setText(activity.str_C);
-        if (activity.signInDiscriminantFormula != null)
-            tv_discriminantSign.setText(activity.signInDiscriminantFormula);
+        tv_discriminantSign.setText(activity.signInDiscriminantFormula);
         tv_discriminant.setText(activity.str_discriminant);
 
 

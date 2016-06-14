@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 public class SolverActivity extends MainActivity {
-    public String str_A, str_B, str_C, symbolB, symbolC, str_discriminant, str_root_first, str_root_second,
+    String str_A, str_B, str_C, symbolB, symbolC, str_discriminant, str_root_first, str_root_second,
             value, B_squared, absoluteValueA, signInDiscriminantFormula, str_discriminant_sqrt, str_complex_root_first,
             str_complex_root_second, str_complex_discriminant;
     Double dbl_A, dbl_B;
