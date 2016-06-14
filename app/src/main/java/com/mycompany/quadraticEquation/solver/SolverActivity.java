@@ -6,10 +6,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 public class SolverActivity extends MainActivity {
-
-    public String String_A, String_B, String_C, symbolB, symbolC, String_discriminant, String_root_first, String_root_second,
-            value, B_SQUARED, AbsA, signInDiscriminantFormula, String_discriminant_sqrt, COMPLEX_ROOT_FIRST, COMPLEX_ROOT_SECOND, COMPLEX_DISCRIMINANT;
-    public Double double_a, double_b;
+    public String str_A, str_B, str_C, symbolB, symbolC, str_discriminant, str_root_first, str_root_second,
+            value, B_squared, absoluteValueA, signInDiscriminantFormula, str_discriminant_sqrt, str_complex_root_first,
+            str_complex_root_second, str_complex_discriminant;
+    Double dbl_A, dbl_B;
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
@@ -36,31 +36,37 @@ public class SolverActivity extends MainActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         getVariables();
+
     }
 
-    //method which gets variables from Main activity
+    //get values from MainActivity
     public void getVariables() {
-
         Bundle bundle = getIntent().getExtras();
 
-        double_a = bundle.getDouble("double_a");
-        double_b = bundle.getDouble("double_b");
-        String_A = bundle.getString("kvadratickarovniceA");
-        String_B = bundle.getString("kvadratickarovniceB");
-        String_C = bundle.getString("kvadratickarovniceC");
-        symbolB = bundle.getString("symbolB");
-        symbolC = bundle.getString("symbolC");
-        String_discriminant = bundle.getString("diskriminant");
-        String_root_first = bundle.getString("double_root_first");
-        String_root_second = bundle.getString("double_root_second");
-        value = bundle.getString("val");
-        B_SQUARED = bundle.getString("b_squared");
-        AbsA = bundle.getString("AbsA");
+        dbl_A = bundle.getDouble("double_a");
+        dbl_B = bundle.getDouble("double_b");
+
+        str_A = bundle.getString("value_A");
+        absoluteValueA = bundle.getString("Abs_A");
+        str_B = bundle.getString("value_B");
+        B_squared = bundle.getString("b_squared");
+        str_C = bundle.getString("value_C");
+
+        symbolB = bundle.getString("symbol_B");
+        symbolC = bundle.getString("symbol_C");
+
+        str_discriminant = bundle.getString("discriminant");
+        str_complex_discriminant = bundle.getString("complex_discriminant");
+        str_root_first = bundle.getString("first_root");
+        str_root_second = bundle.getString("second_root");
+        str_complex_root_first = bundle.getString("complex_first_root");
+        str_complex_root_second = bundle.getString("complex_second_root");
+
         signInDiscriminantFormula = bundle.getString("signInDiscriminantFormula");
-        String_discriminant_sqrt = bundle.getString("double_rooted_discriminant");
-        COMPLEX_ROOT_FIRST = bundle.getString("complex_1");
-        COMPLEX_ROOT_SECOND = bundle.getString("complex_2");
-        COMPLEX_DISCRIMINANT = bundle.getString("COMPLEX_DISCRIMINANT");
+        str_discriminant_sqrt = bundle.getString("sqrt_discriminant");
+        value = bundle.getString("value");
+
+
     }
 
 }

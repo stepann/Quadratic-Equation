@@ -21,5 +21,6 @@
     <string name="err_longA">hodnota A je moc velká</string>
     <string name="err_longB">hodnota B je moc velká</string>
     <string name="err_longC">hodnota C je moc velká</string>
+    <string name="complex_numbers">Komplexní čísla</string>
 
 </resources>

@@ -2,20 +2,21 @@ package com.mycompany.quadraticEquation.solver;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 public class Solver_fragment extends Fragment {
 
     public TextView tv_A, tv_B, tv_C, tv_SymbolB, tv_symbolC, tv_discriminant,
-                    tv_root_first, tv_root_second, tv_x_first, tv_x_first_sub;
+            tv_root_first, tv_root_second, tv_x_first, tv_x_first_sub;
     public TextView tv_x_second, tv_x_second_sub;
-    public TextView tv_Bx;
-    public TextView tv_equal_first, tv_equal_second;
-
+    public TextView tv_Bx, tv_equal_first, tv_equal_second;
+    public LinearLayout ln_x_first, ln_x_second;
     public Solver_fragment() {
 
     }
@@ -26,7 +27,6 @@ public class Solver_fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v =  inflater.inflate(R.layout.fragment_solver_fragment, container, false);
-
 
         //define IDs and
         tv_A = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_A);
@@ -47,22 +47,24 @@ public class Solver_fragment extends Fragment {
         tv_x_second_sub = (TextView)v.findViewById(R.id.tv_SolverFragment_x_sub_second);
         tv_equal_second = (TextView)v.findViewById(R.id.tv_SolverFragment_equal_second);
 
+
         updateTextViews();
         discriminantTextView();
 
-    return v;
+        return v;
     }
 
     private void updateTextViews() {
         SolverActivity activity = (SolverActivity)getActivity();
-        switch (activity.String_A) {
+        switch (activity.str_A) {
             case ("1"):
                 tv_A.setVisibility(View.GONE);
                 break;
             default:
-                tv_A.setText(activity.String_A);
+                tv_A.setText(activity.str_A);
+                //Log.i("TAG", "onCreateView: " + activity.str_A);
         }
-        switch (activity.String_B) {
+        switch (activity.str_B) {
             case ("1"):
                 tv_B.setVisibility(View.GONE);
                 break;
@@ -71,21 +73,23 @@ public class Solver_fragment extends Fragment {
                 tv_Bx.setText(" ");
                 tv_SymbolB.setVisibility(View.GONE);
             default:
-                tv_B.setText(activity.String_B);
+                tv_B.setText(activity.str_B);
+                //Log.i("TAG1", "onCreateView: " + activity.str_B);
         }
-        switch (activity.String_C) {
+        switch (activity.str_C) {
             case ("0"):
                 tv_symbolC.setVisibility(View.GONE);
                 tv_C.setVisibility(View.GONE);
                 break;
             default:
-                tv_C.setText(activity.String_C + " ");
+                tv_C.setText(activity.str_C + " ");
+                // Log.i("TAG2", "onCreateView: " + activity.str_C);
         }
 
 
         tv_SymbolB.setText(activity.symbolB);
         tv_symbolC.setText(activity.symbolC);
-        tv_discriminant.setText(activity.String_discriminant);
+        tv_discriminant.setText(activity.str_discriminant);
 
     }
 
@@ -94,13 +98,13 @@ public class Solver_fragment extends Fragment {
 
         switch (activity.value) {
             case ("negative"):
-                tv_root_first.setText(activity.COMPLEX_ROOT_FIRST);
-                tv_root_second.setText(activity.COMPLEX_ROOT_SECOND);
+                tv_root_first.setText(activity.str_complex_root_first);
+                tv_root_second.setText(activity.str_complex_root_second);
                 break;
 
             case ("positive"):
-                tv_root_first.setText(activity.String_root_first);
-                tv_root_second.setText(activity.String_root_second);
+                tv_root_first.setText(activity.str_root_first);
+                tv_root_second.setText(activity.str_root_second);
                 break;
 
             case("zero"): //delete one root
@@ -108,7 +112,7 @@ public class Solver_fragment extends Fragment {
                 tv_x_second_sub.setText("");
                 tv_equal_second.setText("");
                 tv_root_second.setText("");
-                tv_root_first.setText(activity.String_root_first);
+                tv_root_first.setText(activity.str_root_first);
 
         }
     }

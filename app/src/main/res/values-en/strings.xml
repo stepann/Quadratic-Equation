@@ -21,5 +21,6 @@
     <string name="err_longA">value A is too long</string>
     <string name="err_longB">value B is too long</string>
     <string name="err_longC">value C is too long</string>
+    <string name="complex_numbers">Complex numbers</string>
 
 </resources>
