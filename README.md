@@ -1,3 +1,5 @@
-Quadratic-Equation
+Quadratic equation app
 
-Repository for my Android application
+Repository for Android application
+
+Author: Štěpán Záliš
