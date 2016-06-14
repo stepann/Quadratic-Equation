@@ -17,6 +17,7 @@ public class Solver_fragment extends Fragment {
     public TextView tv_x_second, tv_x_second_sub;
     public TextView tv_Bx, tv_equal_first, tv_equal_second;
     public LinearLayout ln_x_first, ln_x_second;
+
     public Solver_fragment() {
 
     }
@@ -26,26 +27,26 @@ public class Solver_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v =  inflater.inflate(R.layout.fragment_solver_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_solver_fragment, container, false);
 
         //define IDs and
-        tv_A = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_A);
-        tv_B = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_B);
-        tv_C = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_Cx);
-        tv_SymbolB = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_symbolB);
-        tv_symbolC = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_symbolC);
-        tv_discriminant = (TextView)v.findViewById(R.id.tv_SolverFragment_discriminantValue);
-        tv_root_first = (TextView)v.findViewById(R.id.tv_SolverFragment_root_first);
-        tv_Bx = (TextView)v.findViewById(R.id.tv_EquationSolverFragment_Bx);
-        tv_root_second = (TextView)v.findViewById(R.id.tv_SolverFragment_root_second);
+        tv_A = (TextView) v.findViewById(R.id.tv_EquationSolverFragment_A);
+        tv_B = (TextView) v.findViewById(R.id.tv_EquationSolverFragment_B);
+        tv_C = (TextView) v.findViewById(R.id.tv_EquationSolverFragment_Cx);
+        tv_SymbolB = (TextView) v.findViewById(R.id.tv_EquationSolverFragment_symbolB);
+        tv_symbolC = (TextView) v.findViewById(R.id.tv_EquationSolverFragment_symbolC);
+        tv_discriminant = (TextView) v.findViewById(R.id.tv_SolverFragment_discriminantValue);
+        tv_root_first = (TextView) v.findViewById(R.id.tv_SolverFragment_root_first);
+        tv_Bx = (TextView) v.findViewById(R.id.tv_EquationSolverFragment_Bx);
+        tv_root_second = (TextView) v.findViewById(R.id.tv_SolverFragment_root_second);
 
-        tv_x_first = (TextView)v.findViewById(R.id.tv_SolverFragment_x_first);
-        tv_x_first_sub = (TextView)v.findViewById(R.id.tv_SolverFragment_x_sub_first);
-        tv_equal_first = (TextView)v.findViewById(R.id.tv_SolverFragment_equal_first);
+        tv_x_first = (TextView) v.findViewById(R.id.tv_SolverFragment_x_first);
+        tv_x_first_sub = (TextView) v.findViewById(R.id.tv_SolverFragment_x_sub_first);
+        tv_equal_first = (TextView) v.findViewById(R.id.tv_SolverFragment_equal_first);
 
-        tv_x_second = (TextView)v.findViewById(R.id.tv_SolverFragment_x_second);
-        tv_x_second_sub = (TextView)v.findViewById(R.id.tv_SolverFragment_x_sub_second);
-        tv_equal_second = (TextView)v.findViewById(R.id.tv_SolverFragment_equal_second);
+        tv_x_second = (TextView) v.findViewById(R.id.tv_SolverFragment_x_second);
+        tv_x_second_sub = (TextView) v.findViewById(R.id.tv_SolverFragment_x_sub_second);
+        tv_equal_second = (TextView) v.findViewById(R.id.tv_SolverFragment_equal_second);
 
 
         updateTextViews();
@@ -55,7 +56,7 @@ public class Solver_fragment extends Fragment {
     }
 
     private void updateTextViews() {
-        SolverActivity activity = (SolverActivity)getActivity();
+        SolverActivity activity = (SolverActivity) getActivity();
         switch (activity.str_A) {
             case ("1"):
                 tv_A.setVisibility(View.GONE);
@@ -94,7 +95,7 @@ public class Solver_fragment extends Fragment {
     }
 
     private void discriminantTextView() {
-        SolverActivity activity = (SolverActivity)getActivity();
+        SolverActivity activity = (SolverActivity) getActivity();
 
         switch (activity.value) {
             case ("negative"):
@@ -107,7 +108,7 @@ public class Solver_fragment extends Fragment {
                 tv_root_second.setText(activity.str_root_second);
                 break;
 
-            case("zero"): //delete one root
+            case ("zero"): //delete one root
                 tv_x_second.setText("");
                 tv_x_second_sub.setText("");
                 tv_equal_second.setText("");

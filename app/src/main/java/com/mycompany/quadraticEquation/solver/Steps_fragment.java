@@ -53,7 +53,6 @@ public class Steps_fragment extends Fragment {
         tv_result_second_denominator = (TextView) view.findViewById(R.id.tv_ResultSecond_denominator_second);
 
 
-
         rl_root_first = (RelativeLayout) view.findViewById(R.id.rl_result_first);
         rl_root_second = (RelativeLayout) view.findViewById(R.id.rl_result_second);
 
